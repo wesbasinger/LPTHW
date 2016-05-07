@@ -1,0 +1,43 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 34: Accessing Elements of Lists</h1>
+            <p>Lists are pretty useful, but unless you can get at the things in them they aren't all that good.  You can already go through the elements of a list in order, but what if you want say, the fifth element?  You need to know how to access the elements of a list.  Here's how you would access the <em>first</em> element of a list:</p>
+<pre class="code python literal-block">
+<span class="name">animals</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string single">'bear'</span><span class="punctuation">,</span> <span class="literal string single">'tiger'</span><span class="punctuation">,</span> <span class="literal string single">'penguin'</span><span class="punctuation">,</span> <span class="literal string single">'zebra'</span><span class="punctuation">]</span>
+<span class="name">bear</span> <span class="operator">=</span> <span class="name">animals</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span>
+</pre>
+<p>You take a list of animals, and then you get the first (1st) one using <tt class="docutils literal">0</tt>?!  How does that work?  Because of the way math works, Python starts its lists at 0 rather than 1.  It seems weird, but there are many advantages to this, even though it is mostly arbitrary.</p>
+<p>The best way to explain why is by showing you the difference between how you use numbers and how programmers use numbers.</p>
+<p>Imagine you are watching the four animals in our list (<tt class="docutils literal">['bear', 'tiger', 'penguin', 'zebra']</tt>) run in a race.  They cross the finish line in the <em>order</em> we have them in this list.  The race was really exciting because the animals didn't eat each other and somehow managed to run a race.  Your friend shows up late and wants to know who won.  Does your friend say, &quot;Hey, who came in <em>zeroth</em>?&quot;  No, he says, &quot;Hey, who came in <em>first</em>?&quot;</p>
+<p>This is because the <em>order</em> of the animals is important.  You can't have the second animal without the first (1st) animal, and you can't have the third without the second.  It's also impossible to have a &quot;zeroth&quot; animal since zero means nothing.  How can you have a nothing win a race?  It just doesn't make sense.  We call these kinds of numbers &quot;ordinal&quot; numbers, because they indicate an ordering of things.</p>
+<p>Programmers, however, can't think this way because they can pick any element out of a list at any point.  To programmers, the list of animals is more like a deck of cards.  If they want the tiger, they grab it.  If they want the zebra, they can take it too.  This need to pull elements out of lists at random means that they need a way to indicate elements consistently by an address, or an &quot;index,&quot; and the best way to do that is to start the indices at 0.  Trust me on this: the math is <em>way</em> easier for these kinds of accesses.  This kind of number is a &quot;cardinal&quot; number and means you can pick at random, so there needs to be a 0 element.</p>
+<p>How does this help you work with lists?  Simple, every time you say to yourself, &quot;I want the third animal,&quot; you translate this &quot;ordinal&quot; number to a &quot;cardinal&quot; number by subtracting 1.  The &quot;third&quot; animal is at index 2 and is the penguin.  You have to do this because you have spent your whole life using ordinal numbers, and now you have to think in cardinal.  Just subtract 1 and you will be good.</p>
+<p>Remember:  ordinal == ordered, 1st; cardinal == cards at random, 0.</p>
+<p>Let's practice this.  Take this list of animals, and follow the exercises where I tell you to write down what animal you get for that ordinal or cardinal number.  Remember if I say &quot;first,&quot; &quot;second,&quot; then I'm using ordinal, so subtract 1.  If I give you cardinal (like &quot;The animal at 1&quot;), then use it directly.</p>
+<pre class="code python literal-block">
+<span class="name">animals</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string single">'bear'</span><span class="punctuation">,</span> <span class="literal string single">'python'</span><span class="punctuation">,</span> <span class="literal string single">'peacock'</span><span class="punctuation">,</span> <span class="literal string single">'kangaroo'</span><span class="punctuation">,</span> <span class="literal string single">'whale'</span><span class="punctuation">,</span> <span class="literal string single">'platypus'</span><span class="punctuation">]</span>
+</pre>
+<ol class="arabic simple">
+<li>The animal at 1.</li>
+<li>The third (3rd) animal.</li>
+<li>The first (1st) animal.</li>
+<li>The animal at 3.</li>
+<li>The fifth (5th) animal.</li>
+<li>The animal at 2.</li>
+<li>The sixth (6th) animal.</li>
+<li>The animal at 4.</li>
+</ol>
+<p>For each of these, write out a full sentence of the form:  &quot;The first (1st) animal is at 0 and is a bear.&quot; Then say it backwards: &quot;The animal at 0 is the 1st animal and is a bear.&quot;</p>
+<p>Use your Python to check your answers.</p>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>With what you know of the difference between these types of numbers, can you explain why the year 2010 in &quot;January 1, 2010,&quot; really is 2010 and not 2009?  (Hint: you can't pick years at random.)</li>
+<li>Write some more lists and work out similar indexes until you can translate them.</li>
+<li>Use Python to check your answers.</li>
+</ol>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Programmers will tell you to read this guy named &quot;Dijkstra&quot; on this subject.  I recommend you avoid his writings on this unless you enjoy being yelled at by someone who stopped programming at the same time programming started.</p>
+</div>
+</div>
+        <!-- RST ENDS -->

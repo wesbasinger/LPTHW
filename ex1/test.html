@@ -1,0 +1,110 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 1: A Good First Program</h1>
+            <div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you skipped Exercise 0 then you are not doing this book right.  You must read every single thing I write here and read it carefully.  For example, are you trying to use Python 3 for this book?  I said in Exercise 0 to not use Python 3, so you should <em>not</em> use Python 3.  Are you trying to use IDLE or an IDE?  I said not to use one in Exercise 0, so you should not use one.  If you skipped Exercise 0 please go back to it and read it.</p>
+</div>
+<p>You should have spent a good amount of time in Exercise 0 learning how to install a text editor, run the text editor, run the Terminal, and work with both of them.  If you haven't done that, then do not go on. You will not have a good time.  This is the only time I'll start an exercise with a warning that you should not skip or get ahead of yourself.</p>
+<p>Type the following text into a single file named <tt class="docutils literal">ex1.py</tt>.  Python works best with files ending in <tt class="docutils literal">.py</tt>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex1.py-idio.html-1"></a><span class="k">print</span> <span class="s2">&quot;Hello World!&quot;</span>
+<a name="python--ex1.py-idio.html-2"></a><span class="k">print</span> <span class="s2">&quot;Hello Again&quot;</span>
+<a name="python--ex1.py-idio.html-3"></a><span class="k">print</span> <span class="s2">&quot;I like typing this.&quot;</span>
+<a name="python--ex1.py-idio.html-4"></a><span class="k">print</span> <span class="s2">&quot;This is fun.&quot;</span>
+<a name="python--ex1.py-idio.html-5"></a><span class="k">print</span> <span class="s1">&#39;Yay! Printing.&#39;</span>
+<a name="python--ex1.py-idio.html-6"></a><span class="k">print</span> <span class="s2">&quot;I&#39;d much rather you &#39;not&#39;.&quot;</span>
+<a name="python--ex1.py-idio.html-7"></a><span class="k">print</span> <span class="s1">&#39;I &quot;said&quot; do not touch this.&#39;</span>
+</pre></div>
+</td></tr></table><p>If you are on Mac OS X then this is what your text editor might look like if you use <tt class="docutils literal">TextWrangler</tt>:</p>
+<div class="figure align-center">
+<img alt="_static/python/osx_textwrangler.png" src="_static/python/osx_textwrangler.png" />
+</div>
+<p>If you are on Windows using <tt class="docutils literal">Notepad++</tt> then this is what it would look like:</p>
+<div class="figure align-center">
+<img alt="_static/python/win_notepadpp_ex1.png" src="_static/python/win_notepadpp_ex1.png" />
+</div>
+<p>Don't worry if your editor doesn't look exactly the same, it should be close though.  When you create this file, keep in mind these points:</p>
+<ol class="arabic simple">
+<li>I did not type the line numbers on the left. Those are printed in the book so I can talk about specific lines by saying, &quot;See line 5...&quot;  You do not type line numbers into Python scripts.</li>
+<li>I have the <tt class="docutils literal">print</tt> at the beginning of the line and it looks exactly the same as what I have in <tt class="docutils literal">ex1.py</tt>.  Exactly means exactly, not kind of sort of the same.  Every single character has to match for it to work. Color doesn't matter, only the characters you type.</li>
+</ol>
+<p>In Terminal <em>run</em> the file by typing:</p>
+<pre class="code console literal-block">
+<span class="generic output">python ex1.py</span>
+</pre>
+<p>If you did it right then you should see the same output as I in the <em>What You Should See</em> section of this exercise. If not, you have done something wrong.  No, the computer is not wrong.</p>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<p>On Mac OS X in the Terminal you should see this:</p>
+<div class="figure align-center">
+<img alt="_static/python/osx_terminal_ex1.png" src="_static/python/osx_terminal_ex1.png" />
+</div>
+<p>On Windows in PowerShell you should see this:</p>
+<div class="figure align-center">
+<img alt="_static/python/win_powershell_ex1.png" src="_static/python/win_powershell_ex1.png" />
+</div>
+<p>You may see different names, before the <tt class="docutils literal">python ex1.py</tt> command, but the important part is that you type the command and see the output is the same as mine.</p>
+<p>If you have an error it will look like this:</p>
+<pre class="literal-block">
+$ python ex/ex1.py
+  File &quot;ex/ex1.py&quot;, line 3
+    print &quot;I like typing this.
+                             ^
+SyntaxError: EOL while scanning string literal
+</pre>
+<p>It's important that you can read these error messages because you will be making many of these mistakes.  Even I make many of these mistakes.  Let's look at this line by line.</p>
+<ol class="arabic simple">
+<li>We ran our command in the Terminal to run the <tt class="docutils literal">ex1.py</tt> script.</li>
+<li>Python tells us that the file <tt class="docutils literal">ex1.py</tt> has an error on line 3.</li>
+<li>It prints this line of code for us to see it.</li>
+<li>Then it puts a <tt class="docutils literal">^</tt> (caret) character to point at where the problem is.  Notice the missing <tt class="docutils literal">&quot;</tt> (double-quote) character?</li>
+<li>Finally, it prints out a &quot;SyntaxError&quot; and tells us something about what might be the error.  Usually these are very cryptic, but if you copy that text into a search engine, you will find someone else who's had that error and you can probably figure out how to fix it.</li>
+</ol>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p>If you are from another country, and you get errors about ASCII encodings, then put this at the top of your Python scripts:</p>
+<pre class="literal-block">
+# -*- coding: utf-8 -*-
+</pre>
+<p class="last">It will fix them so that you can use Unicode UTF-8 in your scripts without a problem.</p>
+</div>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<p>The Study Drills contain things you should <em>try</em> to do.  If you can't, skip it and come back later.</p>
+<p>For this exercise, try these things:</p>
+<ol class="arabic simple">
+<li>Make your script print another line.</li>
+<li>Make your script print only one of the lines.</li>
+<li>Put a <tt class="docutils literal">#</tt> (octothorpe) character at the beginning of a line.  What did it do?  Try to find out what this character does.</li>
+</ol>
+<p>From now on, I won't explain how each exercise works unless an exercise is different.</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">An &quot;octothorpe&quot; is also called a &quot;pound&quot;, &quot;hash&quot;, &quot;mesh&quot;, or any number of names.  Pick the one that makes you chill out.</p>
+</div>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<p>These are <em>actual</em> questions that real students have asked when doing this exercise.</p>
+<dl class="docutils">
+<dt>Can I use IDLE?</dt>
+<dd>No, you should use Terminal on OS X and PowerShell on Windows, just like I have here.  If you don't know how to use those, then you can go read the Command Line Crash Course in Appendix A.</dd>
+<dt>How do you get colors in your editor?</dt>
+<dd>Save your file first as a <tt class="docutils literal">.py</tt> file, such as <tt class="docutils literal">ex1.py</tt>.  Then you'll have color when you type.</dd>
+<dt>I get <tt class="docutils literal">SyntaxError: invalid syntax</tt> when I run ex1.py.</dt>
+<dd>You are probably trying to run Python, then trying to type Python again.  Close your Terminal, start it again, and right away type only <tt class="docutils literal">python ex1.py</tt>.</dd>
+<dt>I get <tt class="docutils literal">can't open file 'ex1.py': [Errno 2] No such file or directory</tt>.</dt>
+<dd>You need to be in the same directory as the file you created.  Make sure you use the <tt class="docutils literal">cd</tt> command to go there first.  For example, if you saved your file in <tt class="docutils literal">lpthw/ex1.py</tt>, then you would do <tt class="docutils literal">cd lpthw/</tt> before trying to run <tt class="docutils literal">python ex1.py</tt>.  If you don't know what any of that means, then go through <em>Appendix A</em>.</dd>
+<dt>How do I get my country's language characters into my file?</dt>
+<dd>Make sure you type this at the top of your file: <tt class="docutils literal"># <span class="pre">-*-</span> coding: <span class="pre">utf-8</span> <span class="pre">-*-</span></tt>.</dd>
+<dt>My file doesn't run; I just get the prompt back with no output.</dt>
+<dd>You most likely took the code in my <tt class="docutils literal">ex1.py</tt> file literally and thought that <tt class="docutils literal">print &quot;Hello World!&quot;</tt> meant to type only <tt class="docutils literal">&quot;Hello World!&quot;</tt> into the file, without the <tt class="docutils literal">print</tt>.  Your file has to be <em>exactly</em> like mine.</dd>
+</dl>
+</div>
+        <!-- RST ENDS -->

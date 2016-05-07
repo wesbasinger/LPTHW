@@ -1,0 +1,114 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 20: Functions and Files</h1>
+            <p>Remember your checklist for functions, then do this exercise
+paying close attention to how functions and files can work together to make useful stuff.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex20.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<a name="python--ex20.py-idio.html-2"></a>
+<a name="python--ex20.py-idio.html-3"></a><span class="n">script</span><span class="p">,</span> <span class="n">input_file</span> <span class="o">=</span> <span class="n">argv</span>
+<a name="python--ex20.py-idio.html-4"></a>
+<a name="python--ex20.py-idio.html-5"></a><span class="k">def</span> <span class="nf">print_all</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<a name="python--ex20.py-idio.html-6"></a>    <span class="k">print</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="python--ex20.py-idio.html-7"></a>
+<a name="python--ex20.py-idio.html-8"></a><span class="k">def</span> <span class="nf">rewind</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<a name="python--ex20.py-idio.html-9"></a>    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a name="python--ex20.py-idio.html-10"></a>
+<a name="python--ex20.py-idio.html-11"></a><span class="k">def</span> <span class="nf">print_a_line</span><span class="p">(</span><span class="n">line_count</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<a name="python--ex20.py-idio.html-12"></a>    <span class="k">print</span> <span class="n">line_count</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<a name="python--ex20.py-idio.html-13"></a>
+<a name="python--ex20.py-idio.html-14"></a><span class="n">current_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<a name="python--ex20.py-idio.html-15"></a>
+<a name="python--ex20.py-idio.html-16"></a><span class="k">print</span> <span class="s2">&quot;First let&#39;s print the whole file:</span><span class="se">\n</span><span class="s2">&quot;</span>
+<a name="python--ex20.py-idio.html-17"></a>
+<a name="python--ex20.py-idio.html-18"></a><span class="n">print_all</span><span class="p">(</span><span class="n">current_file</span><span class="p">)</span>
+<a name="python--ex20.py-idio.html-19"></a>
+<a name="python--ex20.py-idio.html-20"></a><span class="k">print</span> <span class="s2">&quot;Now let&#39;s rewind, kind of like a tape.&quot;</span>
+<a name="python--ex20.py-idio.html-21"></a>
+<a name="python--ex20.py-idio.html-22"></a><span class="n">rewind</span><span class="p">(</span><span class="n">current_file</span><span class="p">)</span>
+<a name="python--ex20.py-idio.html-23"></a>
+<a name="python--ex20.py-idio.html-24"></a><span class="k">print</span> <span class="s2">&quot;Let&#39;s print three lines:&quot;</span>
+<a name="python--ex20.py-idio.html-25"></a>
+<a name="python--ex20.py-idio.html-26"></a><span class="n">current_line</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="python--ex20.py-idio.html-27"></a><span class="n">print_a_line</span><span class="p">(</span><span class="n">current_line</span><span class="p">,</span> <span class="n">current_file</span><span class="p">)</span>
+<a name="python--ex20.py-idio.html-28"></a>
+<a name="python--ex20.py-idio.html-29"></a><span class="n">current_line</span> <span class="o">=</span> <span class="n">current_line</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="python--ex20.py-idio.html-30"></a><span class="n">print_a_line</span><span class="p">(</span><span class="n">current_line</span><span class="p">,</span> <span class="n">current_file</span><span class="p">)</span>
+<a name="python--ex20.py-idio.html-31"></a>
+<a name="python--ex20.py-idio.html-32"></a><span class="n">current_line</span> <span class="o">=</span> <span class="n">current_line</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="python--ex20.py-idio.html-33"></a><span class="n">print_a_line</span><span class="p">(</span><span class="n">current_line</span><span class="p">,</span> <span class="n">current_file</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>Pay close attention to how we pass in the current line number each time we run <tt class="docutils literal">print_a_line</tt>.</p>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><span></span><a name="python--ex20.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex20.py test.txt
+<a name="python--ex20.sh-idio-shint-pyg.html-2"></a><span class="go">First let&#39;s print the whole file:</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-3"></a>
+<a name="python--ex20.sh-idio-shint-pyg.html-4"></a><span class="go">This is line 1</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-5"></a><span class="go">This is line 2</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-6"></a><span class="go">This is line 3</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-7"></a>
+<a name="python--ex20.sh-idio-shint-pyg.html-8"></a><span class="go">Now let&#39;s rewind, kind of like a tape.</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-9"></a><span class="go">Let&#39;s print three lines:</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-10"></a><span class="go">1 This is line 1</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-11"></a>
+<a name="python--ex20.sh-idio-shint-pyg.html-12"></a><span class="go">2 This is line 2</span>
+<a name="python--ex20.sh-idio-shint-pyg.html-13"></a>
+<a name="python--ex20.sh-idio-shint-pyg.html-14"></a><span class="go">3 This is line 3</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Write English comments for each line to understand what that line does.</li>
+<li>Each time <tt class="docutils literal">print_a_line</tt> is run, you are passing in a variable <tt class="docutils literal">current_line</tt>.  Write out what <tt class="docutils literal">current_line</tt> is equal to on each function call, and trace how it becomes <tt class="docutils literal">line_count</tt> in <tt class="docutils literal">print_a_line</tt>.</li>
+<li>Find each place a function is used, and check its <tt class="docutils literal">def</tt> to make sure that you are giving it the right arguments.</li>
+<li>Research online what the <tt class="docutils literal">seek</tt> function for <tt class="docutils literal">file</tt> does.  Try <tt class="docutils literal">pydoc file</tt> and see if you can figure it out from there. Then try <tt class="docutils literal">pydoc file.seek</tt> to see what seek does.</li>
+<li>Research the shorthand notation <tt class="docutils literal">+=</tt> and rewrite the script to use <tt class="docutils literal">+=</tt> instead.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>What is <tt class="docutils literal">f</tt> in the <tt class="docutils literal">print_all</tt> and other functions?</dt>
+<dd>The <tt class="docutils literal">f</tt> is a variable just like you had in other functions in Exercise 18, except this time it's a file.  A file in Python is kind of like an old tape drive on a mainframe, or maybe a DVD player.  It has a &quot;read head,&quot; and you can &quot;seek&quot; this read head around the file to positions, then work with it there.  Each time you do <tt class="docutils literal">f.seek(0)</tt> you're moving to the start of the file.  Each time you do <tt class="docutils literal">f.readline()</tt> you're reading a line from the file, and moving the read head to right after the <tt class="docutils literal">\n</tt> that ends that line.  This will be explained more as you go on.</dd>
+<dt>Why does <tt class="docutils literal">seek(0)</tt> not set the <tt class="docutils literal">current_line</tt> to 0?</dt>
+<dd>First, the <tt class="docutils literal">seek()</tt> function is dealing in <em>bytes</em>, not lines.  The code <tt class="docutils literal">seek(0)</tt> moves the file to the 0 byte (first byte) in the file.  Second, <tt class="docutils literal">current_line</tt> is just a variable and has no real connection to the file at all.  We are manually incrementing it.</dd>
+<dt>What is <tt class="docutils literal">+=</tt>?</dt>
+<dd>You know how in English I can rewrite &quot;it is&quot; as &quot;it's&quot;?  Or I can rewrite &quot;you are&quot; as &quot;you're&quot;?  In English this is called a contraction, and this is kind of like a contraction for the two operations <tt class="docutils literal">=</tt> and <tt class="docutils literal">+</tt>.  That means <tt class="docutils literal">x = x + y</tt> is the same as <tt class="docutils literal">x += y</tt>.</dd>
+<dt>How does <tt class="docutils literal">readline()</tt> know where each line is?</dt>
+<dd>Inside <tt class="docutils literal">readline()</tt> is code that scans each byte of the file until it finds a <tt class="docutils literal">\n</tt> character, then stops reading the file to return what it found so far.  The file <tt class="docutils literal">f</tt> is responsible for maintaining the current position in the file after each <tt class="docutils literal">readline()</tt> call, so that it will keep reading each line.</dd>
+<dt>Why are there empty lines between the lines in the file?</dt>
+<dd>The <tt class="docutils literal">readline()</tt> function returns the <tt class="docutils literal">\n</tt> that's in the file at the end of that line.  Add a <tt class="docutils literal">,</tt> at the end of your <tt class="docutils literal">print</tt> function calls to avoid adding double <tt class="docutils literal">\n</tt> to every line.</dd>
+</dl>
+</div>
+        <!-- RST ENDS -->

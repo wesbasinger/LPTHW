@@ -1,0 +1,92 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 14: Prompting and Passing</h1>
+            <p>Let's do one exercise that uses <tt class="docutils literal">argv</tt> and <tt class="docutils literal">raw_input</tt> together to ask the user something specific.  You will need this for the next exercise where we learn to read and write files.  In this exercise we'll use <tt class="docutils literal">raw_input</tt> slightly differently by having it print a simple <tt class="docutils literal">&gt;</tt> prompt.  This is similar to a game like Zork or Adventure.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex14.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<a name="python--ex14.py-idio.html-2"></a>
+<a name="python--ex14.py-idio.html-3"></a><span class="n">script</span><span class="p">,</span> <span class="n">user_name</span> <span class="o">=</span> <span class="n">argv</span>
+<a name="python--ex14.py-idio.html-4"></a><span class="n">prompt</span> <span class="o">=</span> <span class="s1">&#39;&gt; &#39;</span>
+<a name="python--ex14.py-idio.html-5"></a>
+<a name="python--ex14.py-idio.html-6"></a><span class="k">print</span> <span class="s2">&quot;Hi </span><span class="si">%s</span><span class="s2">, I&#39;m the </span><span class="si">%s</span><span class="s2"> script.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">user_name</span><span class="p">,</span> <span class="n">script</span><span class="p">)</span>
+<a name="python--ex14.py-idio.html-7"></a><span class="k">print</span> <span class="s2">&quot;I&#39;d like to ask you a few questions.&quot;</span>
+<a name="python--ex14.py-idio.html-8"></a><span class="k">print</span> <span class="s2">&quot;Do you like me </span><span class="si">%s</span><span class="s2">?&quot;</span> <span class="o">%</span> <span class="n">user_name</span>
+<a name="python--ex14.py-idio.html-9"></a><span class="n">likes</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a name="python--ex14.py-idio.html-10"></a>
+<a name="python--ex14.py-idio.html-11"></a><span class="k">print</span> <span class="s2">&quot;Where do you live </span><span class="si">%s</span><span class="s2">?&quot;</span> <span class="o">%</span> <span class="n">user_name</span>
+<a name="python--ex14.py-idio.html-12"></a><span class="n">lives</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a name="python--ex14.py-idio.html-13"></a>
+<a name="python--ex14.py-idio.html-14"></a><span class="k">print</span> <span class="s2">&quot;What kind of computer do you have?&quot;</span>
+<a name="python--ex14.py-idio.html-15"></a><span class="n">computer</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a name="python--ex14.py-idio.html-16"></a>
+<a name="python--ex14.py-idio.html-17"></a><span class="k">print</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="python--ex14.py-idio.html-18"></a><span class="s2">Alright, so you said </span><span class="si">%r</span><span class="s2"> about liking me.</span>
+<a name="python--ex14.py-idio.html-19"></a><span class="s2">You live in </span><span class="si">%r</span><span class="s2">.  Not sure where that is.</span>
+<a name="python--ex14.py-idio.html-20"></a><span class="s2">And you have a </span><span class="si">%r</span><span class="s2"> computer.  Nice.</span>
+<a name="python--ex14.py-idio.html-21"></a><span class="s2">&quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">likes</span><span class="p">,</span> <span class="n">lives</span><span class="p">,</span> <span class="n">computer</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>We make a variable <tt class="docutils literal">prompt</tt> that is set to the prompt we want, and we give that to <tt class="docutils literal">raw_input</tt> instead of typing it over and over.  Now if we want to make the prompt something else, we just change it in this one spot and rerun the script.  Very handy.</p>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<p>When you run this, remember that you have to give the script your name for the <tt class="docutils literal">argv</tt> arguments.</p>
+<div class="highlight"><pre><span></span><a name="python--ex14.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex14.py zed
+<a name="python--ex14.sh-idio-shint-pyg.html-2"></a><span class="go">Hi zed, I&#39;m the ex14.py script.</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-3"></a><span class="go">I&#39;d like to ask you a few questions.</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-4"></a><span class="go">Do you like me zed?</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-5"></a><span class="gp">&gt;</span>  Yes
+<a name="python--ex14.sh-idio-shint-pyg.html-6"></a><span class="go">Where do you live zed?</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-7"></a><span class="gp">&gt;</span>  San Francisco
+<a name="python--ex14.sh-idio-shint-pyg.html-8"></a><span class="go">What kind of computer do you have?</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-9"></a><span class="gp">&gt;</span>  Tandy 1000
+<a name="python--ex14.sh-idio-shint-pyg.html-10"></a>
+<a name="python--ex14.sh-idio-shint-pyg.html-11"></a><span class="go">Alright, so you said &#39;Yes&#39; about liking me.</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-12"></a><span class="go">You live in &#39;San Francisco&#39;.  Not sure where that is.</span>
+<a name="python--ex14.sh-idio-shint-pyg.html-13"></a><span class="go">And you have a &#39;Tandy 1000&#39; computer.  Nice.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Find out what Zork and Adventure were.  Try to find a copy and play it.</li>
+<li>Change the <tt class="docutils literal">prompt</tt> variable to something else entirely.</li>
+<li>Add another argument and use it in your script, the same way you did in the previous exercise with <tt class="docutils literal">first, second = ARGV</tt>.</li>
+<li>Make sure you understand how I combined a <tt class="docutils literal">&quot;&quot;&quot;</tt> style multiline string with the <tt class="docutils literal">%</tt> format activator as the last print.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>I get <tt class="docutils literal">SyntaxError: invalid syntax</tt> when I run this script.</dt>
+<dd>Again, you have to run it right on the command line, not inside Python.  If you type <tt class="docutils literal">python</tt>, and then try to type <tt class="docutils literal">python ex14.py Zed</tt> it will fail because you are running <em>Python inside Python</em>.  Close your window and then just type <tt class="docutils literal">python ex14.py Zed</tt>.</dd>
+<dt>I don't understand what you mean by changing the prompt?</dt>
+<dd>See the variable <tt class="docutils literal">prompt = '&gt; '</tt>.  Change that to have a different value. You know this, it's just a string and you've done 13 exercises making them, so take the time to figure it out.</dd>
+<dt>I get the error <tt class="docutils literal">ValueError: need more than 1 value to unpack</tt>.</dt>
+<dd>Remember when I said you need to look at the What You Should See (<tt class="docutils literal">WYSS</tt>) section and replicate what I did? You need to do the same thing here and focus on how I type the command in, and why I have a command line argument.</dd>
+<dt>How can I run this from IDLE?</dt>
+<dd>Don't use IDLE.</dd>
+<dt>Can I use double-quotes for the <tt class="docutils literal">prompt</tt> variable?</dt>
+<dd>You totally can. Go ahead and try that.</dd>
+<dt>You have a Tandy computer?</dt>
+<dd>I did when I was little.</dd>
+<dt>I get <tt class="docutils literal">NameError: name 'prompt' is not defined</tt> when I run it.</dt>
+<dd>You either spelled the name of the <tt class="docutils literal">prompt</tt> variable wrong or forgot that line.  Go back and compare each line of code to mine, from at the bottom of the script to the top.  Any time you see this error, it means you spelled something wrong, or forgot to create the variable.</dd>
+</dl>
+</div>
+        <!-- RST ENDS -->

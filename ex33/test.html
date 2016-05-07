@@ -1,0 +1,96 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 33: While Loops</h1>
+            <p>Now to totally blow your mind with a new loop, the <tt class="docutils literal"><span class="pre">while-loop</span></tt>.  A <tt class="docutils literal"><span class="pre">while-loop</span></tt> will keep executing the code block under it as long as a boolean expression is <tt class="docutils literal">True</tt>.</p>
+<p>Wait, you have been keeping up with the terminology, right?  That if we write a line and end it with a <tt class="docutils literal">:</tt> (colon) then that tells Python to start a new block of code?  Then we indent and that's the new code.  This is all about structuring your programs so that Python knows what you mean.  If you do not get that idea then go back and do some more work with <tt class="docutils literal"><span class="pre">if-statements</span></tt>, functions, and the <tt class="docutils literal"><span class="pre">for-loop</span></tt> until you get it.</p>
+<p>Later on we'll have some exercises that will train your brain to read these structures, similar to how we burned boolean expressions into your brain.</p>
+<p>Back to <tt class="docutils literal"><span class="pre">while-loops</span></tt>. What they do is simply do a test like an <tt class="docutils literal"><span class="pre">if-statement</span></tt>, but instead of running the code block <em>once</em>, they jump back to the &quot;top&quot; where the <tt class="docutils literal">while</tt> is, and repeat.  A <tt class="docutils literal"><span class="pre">while-loop</span></tt> runs until the expression is <tt class="docutils literal">False</tt>.</p>
+<p>Here's the problem with <tt class="docutils literal"><span class="pre">while-loops</span></tt>: Sometimes they do not stop. This is great if your intention is to just keep looping until the end of the universe.  Otherwise you almost always want your loops to end eventually.</p>
+<p>To avoid these problems, there are some rules to follow:</p>
+<ol class="arabic simple">
+<li>Make sure that you use <tt class="docutils literal"><span class="pre">while-loops</span></tt> sparingly.  Usually a <tt class="docutils literal"><span class="pre">for-loop</span></tt> is better.</li>
+<li>Review your while statements and make sure that the boolean test will become <tt class="docutils literal">False</tt> at some point.</li>
+<li>When in doubt, print out your test variable at the top and bottom of the <tt class="docutils literal"><span class="pre">while-loop</span></tt> to see what it's doing.</li>
+</ol>
+<p>In this exercise, you will learn the <tt class="docutils literal"><span class="pre">while-loop</span></tt> while doing these three checks:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex33.py-idio.html-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="python--ex33.py-idio.html-2"></a><span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="python--ex33.py-idio.html-3"></a>
+<a name="python--ex33.py-idio.html-4"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-5"></a>    <span class="k">print</span> <span class="s2">&quot;At the top i is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span>
+<a name="python--ex33.py-idio.html-6"></a>    <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-7"></a>
+<a name="python--ex33.py-idio.html-8"></a>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="python--ex33.py-idio.html-9"></a>    <span class="k">print</span> <span class="s2">&quot;Numbers now: &quot;</span><span class="p">,</span> <span class="n">numbers</span>
+<a name="python--ex33.py-idio.html-10"></a>    <span class="k">print</span> <span class="s2">&quot;At the bottom i is </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span>
+<a name="python--ex33.py-idio.html-11"></a>
+<a name="python--ex33.py-idio.html-12"></a>
+<a name="python--ex33.py-idio.html-13"></a><span class="k">print</span> <span class="s2">&quot;The numbers: &quot;</span>
+<a name="python--ex33.py-idio.html-14"></a>
+<a name="python--ex33.py-idio.html-15"></a><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-16"></a>    <span class="k">print</span> <span class="n">num</span>
+</pre></div>
+</td></tr></table><div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><span></span><a name="python--ex33.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex33.py
+<a name="python--ex33.sh-idio-shint-pyg.html-2"></a><span class="go">At the top i is 0</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-3"></a><span class="go">Numbers now:  [0]</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-4"></a><span class="go">At the bottom i is 1</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-5"></a><span class="go">At the top i is 1</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-6"></a><span class="go">Numbers now:  [0, 1]</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-7"></a><span class="go">At the bottom i is 2</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-8"></a><span class="go">At the top i is 2</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-9"></a><span class="go">Numbers now:  [0, 1, 2]</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-10"></a><span class="go">At the bottom i is 3</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-11"></a><span class="go">At the top i is 3</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-12"></a><span class="go">Numbers now:  [0, 1, 2, 3]</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-13"></a><span class="go">At the bottom i is 4</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-14"></a><span class="go">At the top i is 4</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-15"></a><span class="go">Numbers now:  [0, 1, 2, 3, 4]</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-16"></a><span class="go">At the bottom i is 5</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-17"></a><span class="go">At the top i is 5</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-18"></a><span class="go">Numbers now:  [0, 1, 2, 3, 4, 5]</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-19"></a><span class="go">At the bottom i is 6</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-20"></a><span class="go">The numbers:</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-21"></a><span class="go">0</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-22"></a><span class="go">1</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-23"></a><span class="go">2</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-24"></a><span class="go">3</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-25"></a><span class="go">4</span>
+<a name="python--ex33.sh-idio-shint-pyg.html-26"></a><span class="go">5</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Convert this <tt class="docutils literal"><span class="pre">while-loop</span></tt> to a function that you can call, and replace <tt class="docutils literal">6</tt> in the test (<tt class="docutils literal">i &lt; 6</tt>) with a variable.</li>
+<li>Use this function to rewrite the script to try different numbers.</li>
+<li>Add another variable to the function arguments that you can pass in that lets you change the <tt class="docutils literal">+ 1</tt> on line 8 so you can change how much it increments by.</li>
+<li>Rewrite the script again to use this function to see what effect that has.</li>
+<li>Write it to use <tt class="docutils literal"><span class="pre">for-loops</span></tt> and <tt class="docutils literal">range</tt>.  Do you need the incrementor in the middle anymore?  What happens if you do not get rid of it?</li>
+</ol>
+<p>If at any time that you are doing this it goes crazy (it probably will), just hold down CTRL and press <tt class="docutils literal">c</tt> (CTRL-<tt class="docutils literal">c</tt>) and the program will abort.</p>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>What's the difference between a <tt class="docutils literal"><span class="pre">for-loop</span></tt> and a <tt class="docutils literal"><span class="pre">while-loop</span></tt>?</dt>
+<dd>A <tt class="docutils literal"><span class="pre">for-loop</span></tt> can only iterate (loop) &quot;over&quot; collections of things.  A <tt class="docutils literal"><span class="pre">while-loop</span></tt> can do any kind of iteration (looping) you want.  However, <tt class="docutils literal"><span class="pre">while-loops</span></tt> are harder to get right and you normally can get many things done with <tt class="docutils literal"><span class="pre">for-loops</span></tt>.</dd>
+<dt>Loops are hard. How do I figure them out?</dt>
+<dd>The main reason people don't understand loops is because they can't follow the &quot;jumping&quot; that the code does.  When a loop runs, it goes through its block of code, and at the end it jumps back to the top.  To visualize this, put print statements all over the loop printing out where in the loop Python is running and what the variables are set to at those points.  Write <tt class="docutils literal">print</tt> lines before the loop, at the top of the loop, in the middle, and at the bottom.  Study the output and try to understand the jumping that's going on.</dd>
+</dl>
+</div>
+        <!-- RST ENDS -->

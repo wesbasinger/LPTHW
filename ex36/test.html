@@ -1,0 +1,51 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 36: Designing and Debugging</h1>
+            <p>Now that you know <tt class="docutils literal"><span class="pre">if-statements</span></tt>, I'm going to give you some rules for <tt class="docutils literal"><span class="pre">for-loops</span></tt> and <tt class="docutils literal"><span class="pre">while-loops</span></tt> that will keep you out of trouble.  I'm also going to give you some tips on debugging so that you can figure out problems with your program.  Finally, you will design a little game similar to the last exercise, but with a slight twist.</p>
+<div class="section" id="rules-for-if-statements">
+<h1>Rules for If-Statements</h1>
+<ol class="arabic simple">
+<li>Every <tt class="docutils literal"><span class="pre">if-statement</span></tt> must have an <tt class="docutils literal">else</tt>.</li>
+<li>If this <tt class="docutils literal">else</tt> should never run because it doesn't make sense, then you must use a <tt class="docutils literal">die</tt> function in the <tt class="docutils literal">else</tt> that prints out an error message and dies, just like we did in the last exercise.  This will find <em>many</em> errors.</li>
+<li>Never nest <tt class="docutils literal"><span class="pre">if-statements</span></tt> more than two deep and always try to do them one deep.</li>
+<li>Treat <tt class="docutils literal"><span class="pre">if-statements</span></tt> like paragraphs, where each <tt class="docutils literal"><span class="pre">if-elif-else</span></tt> grouping is like a set of sentences.  Put blank lines before and after.</li>
+<li>Your boolean tests should be simple.  If they are complex, move their calculations to variables earlier in your function and use a good name for the variable.</li>
+</ol>
+<p>If you follow these simple rules, you will start writing better code than most programmers.  Go back to the last exercise and see if I followed all of these rules.  If not, fix my mistakes.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Never be a slave to the rules in real life.  For training purposes you need to follow these rules to make your mind strong, but in real life sometimes these rules are just stupid.  If you think a rule is stupid, try not using it.</p>
+</div>
+</div>
+<div class="section" id="rules-for-loops">
+<h1>Rules for Loops</h1>
+<ol class="arabic simple">
+<li>Use a <tt class="docutils literal"><span class="pre">while-loop</span></tt> only to loop forever, and that means probably never.  This only applies to Python; other languages are different.</li>
+<li>Use a <tt class="docutils literal"><span class="pre">for-loop</span></tt> for all other kinds of looping, especially if there is a fixed or limited number of things to loop over.</li>
+</ol>
+</div>
+<div class="section" id="tips-for-debugging">
+<h1>Tips for Debugging</h1>
+<ol class="arabic simple">
+<li>Do not use a &quot;debugger.&quot;  A debugger is like doing a full-body scan on a sick person.  You do not get any specific useful information, and you find a whole lot of information that doesn't help and is just confusing.</li>
+<li>The best way to debug a program is to use <tt class="docutils literal">print</tt> to print out the values of variables at points in the program to see where they go wrong.</li>
+<li>Make sure parts of your programs work as you work on them.  Do not write massive files of code before you try to run them.  Code a little, run a little, fix a little.</li>
+</ol>
+</div>
+<div class="section" id="homework">
+<h1>Homework</h1>
+<p>Now write a similar game to the one that I created in the last exercise.  It can be any kind of game you want in the same flavor. Spend a week on it making it as interesting as possible.  For Study Drills, use lists, functions, and modules (remember those from Exercise 13?) as much as possible, and find as many new pieces of Python as you can to make the game work.</p>
+<p>Before you start coding you must draw a map for your game.  Create the rooms, monsters, and traps that the player must go through on paper before you code.</p>
+<p>Once you have your map, try to code it up.  If you find problems with the map then adjust it and make the code match.</p>
+<p>The best way to work on a piece of software is in small chunks like this:</p>
+<ol class="arabic simple">
+<li>On a sheet of paper or an index card, write a list of tasks you need to complete to finish the software.  This is your to do list.</li>
+<li>Pick the easiest thing you can do from your list.</li>
+<li>Write out English comments in your source file as a guide for how you would accomplish this task in your code.</li>
+<li>Write some of the code under the English comments.</li>
+<li>Quickly run your script so see if that code worked.</li>
+<li>Keep working in a cycle of writing some code, running it to test it, and fixing it until it works.</li>
+<li>Cross this task off your list, then pick your next easiest task and repeat.</li>
+</ol>
+<p>This process will help you work on software in a methodical and consistent manner.  As you work, update your list by removing tasks you don't really need and adding ones you do.</p>
+</div>
+        <!-- RST ENDS -->

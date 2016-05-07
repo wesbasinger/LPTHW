@@ -1,0 +1,91 @@
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 4: Variables And Names</h1>
+            <p>Now you can print things with <tt class="docutils literal">print</tt> and you can do math.  The next step is to learn about variables.  In programming a variable is nothing more than a name for something, similar to how my name &quot;Zed&quot; is a name for, &quot;The human who wrote this book.&quot;  Programmers use these variable names to make their code read more like English, and because they have lousy memories.  If they didn't use good names for things in their software, they'd get lost when they tried to read their code again.</p>
+<p>If you get stuck with this exercise, remember the tricks you have been taught so far of finding differences and focusing on details:</p>
+<ol class="arabic simple">
+<li>Write a comment above each line explaining to yourself what it does in English.</li>
+<li>Read your <tt class="docutils literal">.py</tt> file backward.</li>
+<li>Read your <tt class="docutils literal">.py</tt> file out loud, saying even the characters.</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex4.py-idio.html-1"></a><span class="n">cars</span> <span class="o">=</span> <span class="mi">100</span>
+<a name="python--ex4.py-idio.html-2"></a><span class="n">space_in_a_car</span> <span class="o">=</span> <span class="mf">4.0</span>
+<a name="python--ex4.py-idio.html-3"></a><span class="n">drivers</span> <span class="o">=</span> <span class="mi">30</span>
+<a name="python--ex4.py-idio.html-4"></a><span class="n">passengers</span> <span class="o">=</span> <span class="mi">90</span>
+<a name="python--ex4.py-idio.html-5"></a><span class="n">cars_not_driven</span> <span class="o">=</span> <span class="n">cars</span> <span class="o">-</span> <span class="n">drivers</span>
+<a name="python--ex4.py-idio.html-6"></a><span class="n">cars_driven</span> <span class="o">=</span> <span class="n">drivers</span>
+<a name="python--ex4.py-idio.html-7"></a><span class="n">carpool_capacity</span> <span class="o">=</span> <span class="n">cars_driven</span> <span class="o">*</span> <span class="n">space_in_a_car</span>
+<a name="python--ex4.py-idio.html-8"></a><span class="n">average_passengers_per_car</span> <span class="o">=</span> <span class="n">passengers</span> <span class="o">/</span> <span class="n">cars_driven</span>
+<a name="python--ex4.py-idio.html-9"></a>
+<a name="python--ex4.py-idio.html-10"></a>
+<a name="python--ex4.py-idio.html-11"></a><span class="k">print</span> <span class="s2">&quot;There are&quot;</span><span class="p">,</span> <span class="n">cars</span><span class="p">,</span> <span class="s2">&quot;cars available.&quot;</span>
+<a name="python--ex4.py-idio.html-12"></a><span class="k">print</span> <span class="s2">&quot;There are only&quot;</span><span class="p">,</span> <span class="n">drivers</span><span class="p">,</span> <span class="s2">&quot;drivers available.&quot;</span>
+<a name="python--ex4.py-idio.html-13"></a><span class="k">print</span> <span class="s2">&quot;There will be&quot;</span><span class="p">,</span> <span class="n">cars_not_driven</span><span class="p">,</span> <span class="s2">&quot;empty cars today.&quot;</span>
+<a name="python--ex4.py-idio.html-14"></a><span class="k">print</span> <span class="s2">&quot;We can transport&quot;</span><span class="p">,</span> <span class="n">carpool_capacity</span><span class="p">,</span> <span class="s2">&quot;people today.&quot;</span>
+<a name="python--ex4.py-idio.html-15"></a><span class="k">print</span> <span class="s2">&quot;We have&quot;</span><span class="p">,</span> <span class="n">passengers</span><span class="p">,</span> <span class="s2">&quot;to carpool today.&quot;</span>
+<a name="python--ex4.py-idio.html-16"></a><span class="k">print</span> <span class="s2">&quot;We need to put about&quot;</span><span class="p">,</span> <span class="n">average_passengers_per_car</span><span class="p">,</span> <span class="s2">&quot;in each car.&quot;</span>
+</pre></div>
+</td></tr></table><div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal">_</tt> in <tt class="docutils literal">space_in_a_car</tt> is called an <tt class="docutils literal">underscore character</tt>.  Find out how to type it if you do not already know.  We use this character a lot to put an imaginary space between words in variable names.</p>
+</div>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<div class="highlight"><pre><span></span><a name="python--ex4.sh-idio-shint-pyg.html-1"></a><span class="gp">$</span> python ex4.py
+<a name="python--ex4.sh-idio-shint-pyg.html-2"></a><span class="go">There are 100 cars available.</span>
+<a name="python--ex4.sh-idio-shint-pyg.html-3"></a><span class="go">There are only 30 drivers available.</span>
+<a name="python--ex4.sh-idio-shint-pyg.html-4"></a><span class="go">There will be 70 empty cars today.</span>
+<a name="python--ex4.sh-idio-shint-pyg.html-5"></a><span class="go">We can transport 120.0 people today.</span>
+<a name="python--ex4.sh-idio-shint-pyg.html-6"></a><span class="go">We have 90 to carpool today.</span>
+<a name="python--ex4.sh-idio-shint-pyg.html-7"></a><span class="go">We need to put about 3 in each car.</span>
+</pre></div></div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<p>When I wrote this program the first time I had a mistake, and Python told me about it like this:</p>
+<pre class="literal-block">
+Traceback (most recent call last):
+  File &quot;ex4.py&quot;, line 8, in &lt;module&gt;
+    average_passengers_per_car = car_pool_capacity / passenger
+NameError: name 'car_pool_capacity' is not defined
+</pre>
+<p>Explain this error in your own words.  Make sure you use line numbers and explain why.</p>
+<p>Here are more study drills:</p>
+<ol class="arabic simple">
+<li>I used 4.0 for <tt class="docutils literal">space_in_a_car</tt>, but is that necessary? What happens if it's just 4?</li>
+<li>Remember that 4.0 is a <tt class="docutils literal">floating point</tt> number.  It's just a number with a decimal point, and you need 4.0 instead of just 4 so that it is floating point.</li>
+<li>Write comments above each of the variable assignments.</li>
+<li>Make sure you know what <tt class="docutils literal">=</tt> is called (equals) and that it's making names for things.</li>
+<li>Remember that <tt class="docutils literal">_</tt> is an underscore character.</li>
+<li>Try running <tt class="docutils literal">python</tt> from the Terminal as a calculator like you did before and use variable names to do your calculations.  Popular variable names are also <tt class="docutils literal">i</tt>, <tt class="docutils literal">x</tt>, and <tt class="docutils literal">j</tt>.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>What is the difference between <tt class="docutils literal">=</tt> (single-equal) and <tt class="docutils literal">==</tt> (double-equal)?</dt>
+<dd>The <tt class="docutils literal">=</tt> (single-equal) assigns the value on the right to a variable on the left.  The <tt class="docutils literal">==</tt> (double-equal) tests if two things have the same value. You'll learn about this in Exercise 27.</dd>
+<dt>Can we write <tt class="docutils literal">x=100</tt> instead of <tt class="docutils literal">x = 100</tt>?</dt>
+<dd>You can, but it's bad form. You should add space around operators like this so that it's easier to read.</dd>
+<dt>How can I print without spaces between words in <tt class="docutils literal">print</tt>?</dt>
+<dd>You do it like this: <tt class="docutils literal">print &quot;Hey %s there.&quot; % &quot;you&quot;</tt>. You will do more of this soon.</dd>
+<dt>What do you mean by &quot;read the file backward&quot;?</dt>
+<dd>Very simple. Imagine you have a file with 16 lines of code in it.  Start at line 16, and compare it to my file at line 16. Then do it again for 15, and so on until you've read the whole file backward.</dd>
+<dt>Why did you use <tt class="docutils literal">4.0</tt> for <tt class="docutils literal">space_in_a_car</tt>?</dt>
+<dd>It is mostly so you can then find out what a floating point number is and ask this question.  See the Study Drills.</dd>
+</dl>
+</div>
+        <!-- RST ENDS -->
