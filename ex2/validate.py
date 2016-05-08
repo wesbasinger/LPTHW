@@ -1,20 +1,28 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+print_text = proc.communicate()[0]
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+delim = print_text.split(' ')
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+stripped = []
+
+for string in delim:
+    n = string.strip()
+    stripped.append(n)
+
+print stripped
+
+class TestCanUseComments(unittest.TestCase):
+
+    def test_correct_text_output(self):
+        self.assertEqual(stripped, ['Monty', 'Python', 'and', 'the', 'Flying', 'Circus'])
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()                   
