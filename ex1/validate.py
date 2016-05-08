@@ -1,4 +1,12 @@
 import unittest
+import subprocess
+
+proc = subprocess.Popen(
+		['python', 'practice.py'], 
+		stdout=subprocess.PIPE, 
+		stderr=subprocess.STDOUT)
+
+print proc.communicate()[0]
 
 class TestStringMethods(unittest.TestCase):
 
