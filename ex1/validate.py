@@ -6,23 +6,30 @@ proc = subprocess.Popen(
 		stdout=subprocess.PIPE, 
 		stderr=subprocess.STDOUT)
 
-print proc.communicate()[0]
+print_text = proc.communicate()[0]
 
-class TestStringMethods(unittest.TestCase):
+delim = print_text.split('\n')
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+class TestPrintStatements(unittest.TestCase):
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+  def test_maternal_and_paternal_insults(self):
+      self.assertEqual(delim[0], 'Your mother was a hamster and your father smelt of elderberries!')
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+  def test_what_have_the_Romans_done_for_us(self):
+      self.assertEqual(delim[1], 'All right... all right... but apart from better sanitation, the medicine, education, wine, public order, irrigation, roads, a fresh water system, and public health ... what have the Romans ever done for us?')
+
+  def test_happy_occasion_of_killing(self):
+      self.assertEqual(delim[2], 'Please, this is supposed to be a happy occasion. Let us not bicker and argue over who killed who.')
+
+  def test_strange_women_lying_in_ponds(self):
+	  self.assertEqual(delim[3], 'Listen, strange women lying in ponds distributing swords is no basis for a system of government. Supreme executive power derives from a mandate from the masses, not from some farcical aquatic ceremony.')
+
+  def test_silly_walks(self):
+	  self.assertEqual(delim[4], "I'm sorry to have kept you waiting, but I'm afraid my walk has become rather sillier recently.")
+
+  def test_flesh_wound(self):
+	  self.assertEqual(delim[5], "It's just a flesh wound.")	
+
 
 if __name__ == '__main__':
     unittest.main()
