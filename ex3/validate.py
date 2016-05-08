@@ -1,20 +1,41 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+print_text = proc.communicate()[0]
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+delim = print_text.split('\n')
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+class TestCanUseMathOperators(unittest.TestCase):
+
+	def test_can_print_6(self):
+		self.assertEqual(delim[0], 6)
+
+	def test_can_print_neg_3(self):
+		self.assertEqual(delim[1], -3)
+
+	def test_can_print_100_with_multiplication(self):
+		self.assertEqual(delim[2], 100)
+
+	def test_can_print_boolean_true(self):
+		self.assertEqual(delim[3], True)
+
+	def test_can_print_4_with_3_operations(self):
+		self.assertEqual(delim[4], 4)
+
+	def test_can_print_1_with_modular_division(self):
+		self.assertEqual(delim[5], 1)
+
+	def test_can_print_a_float(self):
+		self.assertEqual(delim[6], 1.23)
+
+	def test_can_print_boolean_false_with_diff_ops(self):
+		self.assertEqual(delim[7], False)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()                   
