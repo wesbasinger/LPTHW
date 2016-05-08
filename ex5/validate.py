@@ -1,20 +1,56 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+print_text = proc.communicate()[0]
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+delim = print_text.split('\n')
+
+class TestCanUseStringFormatting(unittest.TestCase):
+
+    def test_can_print_name_string(self):
+		self.assertEqual(
+			str(delim[0]), 
+			"Let's talk about %s." % my_name
+		)
+
+    def test_can_print_height_string(self):
+		self.assertEqual(
+			str(delim[1]),
+			"He's %s inches tall." % my_height
+		)
+
+    def test_can_print_weight_string(self):
+		self.assertEqual(
+			str(delim[2]),
+			"He's %s pounds heavy." % my_weight
+		)
+
+    def test_can_print_eyes_and_hair(self):
+		self.assertEqual(
+			str(delim[3]), 
+			"He's got %s eyes and %s hair." % (my_eyes, my_hair)
+		)
+
+    def test_can_print_teeth_string(self):
+		self.assertEqual(
+			str(delim[4]), 
+			"His teeth are usually %s depending on the coffee." % (my_teeth)
+		)
+
+	def test_can_add_variables_and_print(self):
+		self.assertEqual(
+			str(delim[5]),
+			"If I add %d, %d, and %d I get %d." % (my_age, my_height, my_weight, my_age + my_height + my_weight)
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
