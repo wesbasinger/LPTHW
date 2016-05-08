@@ -19,9 +19,9 @@ class TestCanUseMathOperators(unittest.TestCase):
 			capital_city_of_Texas,
 			"Austin"
 		)
-        self.assertEqual(
+		self.assertEqual(
 			str(delim[0]), 
-			"The capital of Texas is Austin."
+			"The capital city of Texas is Austin."
 		)
 
     def test_can_declare_num_sides_square(self):
@@ -29,7 +29,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			num_sides_of_a_square,
 			4
 		)
-        self.assertEqual(
+		self.assertEqual(
 			str(delim[1]),
 			"The number of sides in a square is 4."
 		)
@@ -39,7 +39,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			water_is_a_molecule,
 			True
 		)
-        self.assertEqual(
+		self.assertEqual(
 			str(delim[2]),
 			"Is water a molecule? True"
 		)
@@ -49,7 +49,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			num_sides_of_a_triangle,
 			3
 		)
-        self.assertEqual(
+		self.assertEqual(
 			str(delim[3]), 
 			"A triangle has 1 less side than a square."
 		)
@@ -59,11 +59,12 @@ class TestCanUseMathOperators(unittest.TestCase):
 			marys_pet,
 			"lamb"
 		)
-        self.assertEqual(
+		self.assertEqual(
 			str(delim[4]), 
 			"Mary's pet was a little lamb."
 		)
 
 
 if __name__ == '__main__':
-    unittest.main()                   
+    unittest.main()   
+
