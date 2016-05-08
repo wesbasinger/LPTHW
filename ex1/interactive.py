@@ -38,13 +38,5 @@ else:
 	print "It's not matching exactly right."
 	user_input = str((raw_input("Give the command to print 'Python does not use curly braces for code blocks, instead it uses whitespace.'\n>>")))
 
-print "And this last one needs a little trick to it."
-user_input = str((raw_input('Give the command to print \'Hamlet was quoted as saying, \"To be or not to be, that is the question.\".\n>>')))
-
-if user_input == 'print \'Hamlet was quoted as saying, \"To be or not to be, that is the question.\"':
-	print "Success!"
-else:
-	print "It's not matching exactly right."
-	user_input = str((raw_input("Give the command to print 'Python does not use curly braces for code blocks, instead it uses whitespace.'\n>>")))
-
+print "Great job, go ahead and try the practice.py exercise now."
 exit(0)
