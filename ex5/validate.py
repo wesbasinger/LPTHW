@@ -44,7 +44,7 @@ class TestCanUseStringFormatting(unittest.TestCase):
 			"His teeth are usually %s depending on the coffee." % (my_teeth)
 		)
 
-	def test_can_add_variables_and_print(self):
+    def test_can_add_variables_and_print(self):
 		self.assertEqual(
 			str(delim[5]),
 			"If I add %d, %d, and %d I get %d." % (my_age, my_height, my_weight, my_age + my_height + my_weight)
