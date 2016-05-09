@@ -1,20 +1,15 @@
+from sys import argv
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import hello_from_the_other_side
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+first = argv[1]
+second = argv[2]
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+try:
+	hello_from_the_other_side(argv[1], argv[2])
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+except IndexError:
+	print "You're not giving enough command line arguments!"
 
-if __name__ == '__main__':
-    unittest.main()
+print "There is no automatic test runner on this one, so if you got here, you win."
