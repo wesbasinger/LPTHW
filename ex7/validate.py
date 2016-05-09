@@ -1,20 +1,48 @@
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+class TestCanUseStringFormatting(unittest.TestCase):
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+    def test_can_Pounce_3_times(self):
+		self.assertEqual(
+			word,
+			"Pounce"
+		)
+		self.assertEqual(
+			combined,
+			"PouncePouncePounce"
+		)
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+    def test_can_make_plain_line_sep(self):
+		self.assertEqual(
+			char,
+			"="
+		)
+		self.assertEqual(
+			num_times,
+			17
+		)
+		self.assertEqual(
+			line_sep,
+			"================"
+		)
+
+    def test_can_make_fancy_lin_sep(self):
+		self.assertEqual(
+			pattern,
+			"+-"
+		)
+		self.assertEqual(
+			repeat,
+			8
+		)
+		self.assertEqual(
+			together,
+			"+-+-+-+-+-+-+-+_"
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
