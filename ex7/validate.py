@@ -25,7 +25,7 @@ class TestCanUseStringFormatting(unittest.TestCase):
 		)
 		self.assertEqual(
 			line_sep,
-			"================"
+			"================="
 		)
 
     def test_can_make_fancy_lin_sep(self):
@@ -39,7 +39,7 @@ class TestCanUseStringFormatting(unittest.TestCase):
 		)
 		self.assertEqual(
 			together,
-			"+-+-+-+-+-+-+-+_"
+			"+-+-+-+-+-+-+-+-"
 		)
 
 
