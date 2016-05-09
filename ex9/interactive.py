@@ -15,6 +15,8 @@ print "by now."
 print r'print "Hello\n"'
 prompt = raw_input(">>>")
 
+print "Hello\n"
+
 print "Did you see how it put in a new line?"
 print r'The \n inserts a new line character.'
 print "You don't see it too much in the shell,"
@@ -25,6 +27,9 @@ prompt = raw_input('>>>')
 
 if r'\n' in prompt:
 	print "Great job.  We wont belabor that point."
+else:
+	print "Not quite. Try again."
+	exit(0)
 
 print "Multiline comments would be a bit of a pain to implement."
 print "We'll catch those later."
