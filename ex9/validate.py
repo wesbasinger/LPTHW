@@ -10,7 +10,12 @@ proc = subprocess.Popen(
 
 print_text = proc.communicate()[0]
 
-delim = print_text.split('\n')
+whitespace = print_text.split('\n')
+
+delim = []
+
+for entry in whitespace:
+    delim.append(entry.rstrip())
 
 class TestCanWorkWithNewlines(unittest.TestCase):
 
