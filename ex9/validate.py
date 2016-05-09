@@ -1,20 +1,76 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+print_text = proc.communicate()[0]
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+delim = print_text.split('\n')
+
+class TestCanWorkWithNewlines(unittest.TestCase):
+
+    def test_can_print_fib_on_newlines(self):
+		self.assertEqual(
+			str(delim[0]), 
+			"1"
+		)
+		self.assertEqual(
+			str(delim[1]),
+			"1"
+		)
+		self.assertEqual(
+			str(delim[2]),
+			"2"
+		)
+		self.assertEqual(
+			str(delim[3]),
+			"3"
+		)
+		self.assertEqual(
+			str(delim[4]),
+			"5"
+		)
+		self.assertEqual(
+			str(delim[5]),
+			"8"
+		)
+		self.assertEqual(
+			str(delim[6]),
+			"13"
+		)
+		self.assertEqual(
+			str(delim[7]),
+			"21"
+		)
+		self.assertEqual(
+			str(delim[8]),
+			"34"
+		)
+
+    def test_can_break_one_line_into_many(self):
+		self.assertEqual(
+			str(delim[9]),
+			"Roses are red,"
+		)
+		self.assertEqual(
+			str(delim[10]),
+			"Violets are blue,"
+		)
+		self.assertEqual(
+			str(delim[11]),
+			"Coding is fun,"
+		)
+		self.assertEqual(
+			str(delim[12]),
+			"Maybe it is new."
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
