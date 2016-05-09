@@ -16,4 +16,15 @@ print r'print "Hello\n"'
 prompt = raw_input(">>>")
 
 print "Did you see how it put in a new line?"
-print "The
+print r'The \n inserts a new line character.'
+print "You don't see it too much in the shell,"
+print "but you will when you start working with real files."
+
+print "Now you try making a string that has a new line."
+prompt = raw_input('>>>')
+
+if r'\n' in prompt:
+	print "Great job.  We wont belabor that point."
+
+print "Multiline comments would be a bit of a pain to implement."
+print "We'll catch those later."
