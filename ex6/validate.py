@@ -1,20 +1,70 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+print_text = proc.communicate()[0]
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+delim = print_text.split('\n')
+
+class TestCanUseStringFormatting(unittest.TestCase):
+
+    def test_can_cat_row_row_row_your_boat(self):
+		self.assertEqual(
+			str(delim[0]), 
+			"Row, row, row your boat Gently down the stream."
+		)
+
+    def test_can_cat_mary_had_a_little_lamb(self):
+		self.assertEqual(
+			main_char,
+			"Mary"
+		)
+		self.assertEqual(
+			space,
+			" "
+		)
+		self.assertEqual(
+			verb,
+			"had"
+		)
+		self.assertEqual(
+			indef_art,
+			"a"
+		)
+		self.assertEqual(
+			adjective,
+			"little"
+		)
+		self.assertEqual(
+			direct_object,
+			"lamb"
+		)
+		self.assertEqual(
+			str(delim[1]),
+			"Mary had a little lamb"
+		)
+
+    def test_can_cat_takes_1_to_know_one(self):
+		self.assertEqual(
+			one,
+			"one"
+		)
+		self.assertEqual(
+			one_digit,
+			"1"
+		)
+		self.assertEqual(
+			str(delim[2]),
+			"Takes 1 to know one."
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
