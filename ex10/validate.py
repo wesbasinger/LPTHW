@@ -17,7 +17,7 @@ class TestCanUseEscapeCharacters(unittest.TestCase):
     def test_can_escape_double_quote(self):
 		self.assertEqual(
 			str(delim[0]), 
-			"I am 6'2\" tall"
+			"I am 6'2\" tall."
 		)
 
     def test_can_escape_single_quote(self):
