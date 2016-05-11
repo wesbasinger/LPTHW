@@ -45,7 +45,7 @@ class TestCanOpenFiles(unittest.TestCase):
 	def test_can_write_own_line(self):
 		self.assertNotEqual(
 			delim[1],
-			""
+			None
 			
 		)
 

@@ -3,11 +3,11 @@
 # directly edit either of those.  Your program should be
 # doing all the work.
 
-# first open up blank.txt
+# first open up blank.txt, make sure to specify 'write' mode
 
 blank =
 
-# also, open up antiblank.txt
+# also, open up antiblank.txt in write mode
 
 antiblank = 
 
@@ -32,3 +32,5 @@ antiblank.write(XXX CODE HERE)
 # Lastly, print the contents of antiblank.txt
 
 XXX CODE HERE
+
+# Also close the file.
