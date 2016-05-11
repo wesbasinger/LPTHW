@@ -1,20 +1,55 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+blank_test = open('blank.txt')
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+blank_contents = blank_test.read()
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
+
+print_text = proc.communicate()[0]
+
+delim = print_text.split('\n')
+
+class TestCanOpenFiles(unittest.TestCase):
+	def test_can_make_a_file_pointer_to_blank(self):
+		self.assertIsInstance(
+			blank,
+			file
+	)
+	
+	def test_can_make_a_file_pointer_to_antiblank(self):
+		self.assertIsInstance(
+			antiblank,
+			file
+		)
+
+	def test_can_truncate_file(self):
+		self.assertEqual(
+			blank_contents,
+			""
+		)
+	
+
+    def test_can_write_to_file(self):
+		self.assertEqual(
+			delim[0],
+			'Testing, testing, 123'
+		)
+
+	def test_can_write_own_line(self):
+		self.assertNotEqual(
+			delim[1],
+			""
+			
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
