@@ -14,11 +14,11 @@ delim = print_text.split('\n')
 
 class TestCanOpenFiles(unittest.TestCase):
 
-    def test_can_make_a_file_pointer(self):
-		self.assertEqual(
-			type(txt), 
-			'file'
-		)
+   def test_can_make_a_file_pointer(self):
+        self.assertIsInstance(
+            txt,
+            file
+        )
 
     def test_can_read_file_contents(self):
 		self.assertEqual(
