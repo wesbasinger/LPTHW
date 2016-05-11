@@ -10,21 +10,29 @@ blank =
 
 # Let's make sure 'blank.txt' is blank by calling truncate() on it
 
-# also, open up antiblank.txt in read mode
 
-antiblank = 
+# also, open up antiblank.txt in write mode
 
+antiblank =
+ 
 # Now, let's write a line into antiblank.txt.
 # Let's write 'Testing, testing, 123' back into the file.
+# Make sure to put a new line at the end.
 
 antiblank.write(XXX CODE GOES HERE)
 
 # See how that works?
 # Now add one more line of any content you want.
 
-antiblank.write(XXX CODE GOES HERE)
 
 # Lastly, print the contents of antiblank.txt
+# First close the antiblank file.
 
+
+# Then open it back up in READ mode
+
+
+# Now print it's contents
 
 # Also close the file.
+
