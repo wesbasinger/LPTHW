@@ -1,20 +1,38 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+b = open('bravo.txt')
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+content = b.read()
+
+class TestCanOpenFiles(unittest.TestCase):
+
+	def test_can_make_a_file_pointer_to_alpha(self):
+		self.assertIsInstance(
+			alpha,
+			file
+	)
+	
+	def test_can_make_a_file_pointer_to_bravo(self):
+		self.assertIsInstance(
+			bravo,
+			file
+		)
+
+	def test_can_copy_file(self):
+		self.assertEqual(
+			content,
+			'Ten four mother goose.\nCopy that, Rodger.'
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
