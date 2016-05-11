@@ -29,8 +29,7 @@ class TestCanOpenFiles(unittest.TestCase):
 	def test_can_copy_file(self):
 		self.assertEqual(
 			content,
-			'Ten four mother goose.\nCopy that, Rodger.'
-		)
+			'Ten four mother goose.\nCopy that, Rodger.\n')
 
 
 if __name__ == '__main__':
