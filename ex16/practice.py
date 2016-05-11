@@ -1,3 +1,4 @@
+
 # This is good stuff, let's practice some more with files.
 # There are two files in this folder to work with, do not
 # directly edit either of those.  Your program should be
@@ -5,32 +6,25 @@
 
 # first open up blank.txt, make sure to specify 'write' mode
 
-blank =
+blank = 
 
-# also, open up antiblank.txt in write mode
+# Let's make sure 'blank.txt' is blank by calling truncate() on it
+
+# also, open up antiblank.txt in read mode
 
 antiblank = 
 
-# I want blank.txt to be blank!  Wipe it out with truncate()
-
-XXX CODE HERE
-
-# I have content in antiblank.txt, but I need to start fresh,
-# so wipe it with truncate() as well.
-
-XXX CODE HERE
-
-# Now, let's write a line back into antiblank.txt.
+# Now, let's write a line into antiblank.txt.
 # Let's write 'Testing, testing, 123' back into the file.
 
-antiblank.write(XXX CODE HERE)
+antiblank.write(XXX CODE GOES HERE)
 
 # See how that works?
 # Now add one more line of any content you want.
 
+antiblank.write(XXX CODE GOES HERE)
 
 # Lastly, print the contents of antiblank.txt
 
-XXX CODE HERE
 
 # Also close the file.

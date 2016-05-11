@@ -7,6 +7,8 @@ blank_test = open('blank.txt')
 
 blank_contents = blank_test.read()
 
+blank_test.close()
+
 proc = subprocess.Popen(
         ['python', 'practice.py'],
         stdout=subprocess.PIPE,
@@ -34,9 +36,7 @@ class TestCanOpenFiles(unittest.TestCase):
 			blank_contents,
 			""
 		)
-	
-
-    def test_can_write_to_file(self):
+	def test_can_write_to_file(self):
 		self.assertEqual(
 			delim[0],
 			'Testing, testing, 123'
