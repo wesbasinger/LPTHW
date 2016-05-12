@@ -18,3 +18,5 @@ def one_of_two(first, second):
 # prints 'Depends' every time it's called
 
 WRITE THE WHOLE THING
+
+# Now call all three functions, in order

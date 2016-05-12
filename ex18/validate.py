@@ -1,29 +1,55 @@
 import unittest
+import subprocess
 
-from practice import one_time, one_of_two, dependable
+from practice import *
 
-monty = one_time("Monty Python and the Holy Grail")
-monty_and_python  = one_of_two("Monty", "Python")
-depends = dependable()
+blank_test = open('blank.txt')
 
-class TestIntroToFunctions(unittest.TestCase):
+blank_contents = blank_test.read()
 
-	def test_can_def_a_function_with_one_parameter(self):
-		self.assertEqual(
-			monty, 
-			"Monty Python and the Holy Grail"
+blank_test.close()
+
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
+
+print_text = proc.communicate()[0]
+
+delim = print_text.split('\n')
+
+class TestCanOpenFiles(unittest.TestCase):
+	def test_can_make_a_file_pointer_to_blank(self):
+		self.assertIsInstance(
+			blank,
+			file
+	)
+	
+	def test_can_make_a_file_pointer_to_antiblank(self):
+		self.assertIsInstance(
+			antiblank,
+			file
 		)
-	def test_can_def_a_function_that_only_prints_one_arg(self):
+
+	def test_can_truncate_file(self):
 		self.assertEqual(
-			monty_and_python,
-			"Python"
+			blank_contents,
+			""
 		)
-	def test_can_def_a_function_wo_parameters(self):
+	def test_can_write_to_file(self):
 		self.assertEqual(
-			depends,
-			"Depends"
+			delim[0],
+			'Testing, testing, 123'
+		)
+
+	def test_can_write_own_line(self):
+		self.assertNotEqual(
+			delim[1],
+			None
+			
 		)
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
