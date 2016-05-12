@@ -1,20 +1,29 @@
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import one_time, one_of_two, dependable
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+monty = one_time("Monty Python and the Holy Grail")
+monty_and_python  = one_of_two("Monty", "Python")
+depends = dependable()
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+class TestIntroToFunctions(unittest.TestCase):
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_can_def_a_function_with_one_parameter(self):
+		self.assertEqual(
+			monty, 
+			"Monty Python and the Holy Grail"
+		)
+	def test_can_def_a_function_that_only_prints_one_arg(self):
+		self.assertEqual(
+			monty_and_python,
+			"Python"
+		)
+	def test_can_def_a_function_wo_parameters(self):
+		self.assertEqual(
+			depends,
+			dependable
+		)
+
 
 if __name__ == '__main__':
     unittest.main()
