@@ -20,3 +20,12 @@ def one_of_two(first, second):
 WRITE THE WHOLE THING
 
 # Now call all three functions, in order
+# First call one_time, with "Monty Python and the Holy Grail"
+# as the argument
+
+
+# Second, call one_of_two, with the arguments of "Monty"
+# and "Python"
+
+
+# Last, call the function dependable
