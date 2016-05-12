@@ -21,7 +21,7 @@ class TestIntroToFunctions(unittest.TestCase):
 	def test_can_def_a_function_wo_parameters(self):
 		self.assertEqual(
 			depends,
-			dependable
+			"Depends"
 		)
 
 
