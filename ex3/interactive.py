@@ -70,7 +70,7 @@ print "What would the statement below evaluate to?"
 print ">>2*2 >= 2 + 4"
 prompt = str(raw_input(">>"))
 
-if prompt == "True":
+if prompt == "False":
 	print "Good job!"
 else:
 	print "Try again! This is a boolean, so your answer should be True or False."
