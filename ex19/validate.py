@@ -1,20 +1,38 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+print_text = proc.communicate()[0]
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+delim = print_text.split('\n')
+
+class CanCallSimpleFunctions(unittest.TestCase):
+	def test_can_call_with_own_argument(self):
+		self.assertEqual(
+			delim[0],
+			"2 limbs have been chopped off."
+		)
+	
+	def test_can_call_function_with_variable(self):
+		self.assertEqual(
+			delim[1],
+			"4 limbs have been chopped off."
+		)
+
+	def test_variable_equals_4(self):
+		self.assertEqual(
+			bloody_stumps,
+			4
+		)
+
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
