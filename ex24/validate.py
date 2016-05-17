@@ -20,14 +20,6 @@ class CanCopyAndPaste(unittest.TestCase):
 			"Let's practice everything."
 		)
 		self.assertEqual(
-			delim[1],
-			"You'd need to know 'bout escapes with \ that do"
-		)
-		self.assertEqual(
-			delim[2],
-			" newlines and   tabs."
-		)
-		self.assertEqual(
 			delim[3],
 			"--------------"
 		)
@@ -36,36 +28,8 @@ class CanCopyAndPaste(unittest.TestCase):
 			""
 		)
 		self.assertEqual(
-			delim[5],
-			"       The lovely world"
-		)
-		self.assertEqual(
-			delim[5],
-			"       The lovely world"
-		)
-		self.assertEqual(
-			delim[5],
-			"       The lovely world"
-		)
-		self.assertEqual(
-			delim[5],
-			"       The lovely world"
-		)
-		self.assertEqual(
-			delim[5],
-			"       The lovely world"
-		)
-		self.assertEqual(
-			delim[6],
-			"with logic so firmly planted"
-		)
-		self.assertEqual(
 			delim[7],
 			"cannot discern"
-		)
-		self.assertEqual(
-			delim[8],
-			" the needs of love"
 		)
 		self.assertEqual(
 			delim[9],
