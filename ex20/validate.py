@@ -1,20 +1,50 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+print_text = proc.communicate()[0]
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+delim = print_text.split('\n')
+
+class CanCallSimpleFunctionsWithFileOps(unittest.TestCase):
+	def test_can_make_print_all_function(self):
+		self.assertEqual(
+			delim[0],
+			"Leaping from tree to tree! As they"
+		)
+		self.assertEqual(
+			delim[4],
+			"The Larch!"
+		)
+		self.assertEqual(
+			delim[12],
+			"I sleep all night and I work all day."
+		)
+	
+	def test_can_make_print_line_function(self):
+		self.assertEqual(
+			delim[13],
+			"Oh, I'm a lumberjack, and I'm okay,"
+		)
+		self.assertEqual(
+			delim[14],
+			"I sleep all night and I work all day."
+		)
+
+	def test_variable_is_a_file_object(self):
+		self.assertIsInstance(
+			current_file,
+			file
+		)
+
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
