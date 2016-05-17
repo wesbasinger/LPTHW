@@ -1,20 +1,53 @@
 import unittest
+from practice import returns_2, plus_two, square, concat, compare_greater_than
 
-class TestStringMethods(unittest.TestCase):
+class TestFunctionReturnsSomething(unittest.TestCase):
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
-
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
-
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_returns_two(self):
+		self.assertEqual(
+			return_two(2),
+			2
+		)
+		self.assertEqual(
+			return_two(7),
+			2
+		)
+		self.assertEqual(
+			return_two("test"),
+			2
+		)
+	def test_plus_two(self):
+		self.assertEqual(
+			plus_two(0),
+			2
+		)
+		self.assertEqual(
+			plus_two(-19),
+			-17
+		)
+	def test_square(self):
+		self.assertEqual(
+			square(5),
+			25
+		)
+		self.assertEqual(
+			square(-10),
+			100
+		)
+	def test_concat(self):
+		self.assertEqual(
+			concat("Hello", "World"),
+			"HelloWorld"
+		)
+	def test_compare_greater_than(self):
+		self.assertEqual(
+			compare_greater_than(9, 2),
+			True
+		)
+		self.assertEqual(
+			compare_greater_than(3,3),
+			False
+		)
 
 if __name__ == '__main__':
     unittest.main()
