@@ -29,7 +29,7 @@ class CanCopyAndPaste(unittest.TestCase):
 		)
 		self.assertEqual(
 			delim[7],
-			"cannot discern"
+			"cannot discern "
 		)
 		self.assertEqual(
 			delim[9],
