@@ -1,19 +1,19 @@
 import unittest
-from practice import returns_2, plus_two, square, concat, compare_greater_than
+from practice import returns_two, plus_two, square, concat, compare_greater_than
 
 class TestFunctionReturnsSomething(unittest.TestCase):
 
 	def test_returns_two(self):
 		self.assertEqual(
-			return_two(2),
+			returns_two(2),
 			2
 		)
 		self.assertEqual(
-			return_two(7),
+			returns_two(7),
 			2
 		)
 		self.assertEqual(
-			return_two("test"),
+			returns_two("test"),
 			2
 		)
 	def test_plus_two(self):

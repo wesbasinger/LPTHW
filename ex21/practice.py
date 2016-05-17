@@ -5,7 +5,7 @@
 # First define a function that takes an input and
 # returns 2 no matter what.
 
-def returns_2(x):
+def returns_two(x):
 	XXX Finish it
 
 # Now define a function that returns its input plus 2
