@@ -29,7 +29,7 @@ class CanCallSimpleFunctionsWithFileOps(unittest.TestCase):
 	
 	def test_can_make_print_line_function(self):
 		self.assertEqual(
-			delim[13],
+			delim[14],
 			"Leaping from tree to tree! As they"
 		)
 
