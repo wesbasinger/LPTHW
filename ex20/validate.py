@@ -30,11 +30,7 @@ class CanCallSimpleFunctionsWithFileOps(unittest.TestCase):
 	def test_can_make_print_line_function(self):
 		self.assertEqual(
 			delim[13],
-			"Oh, I'm a lumberjack, and I'm okay,"
-		)
-		self.assertEqual(
-			delim[14],
-			"I sleep all night and I work all day."
+			"Leaping from tree to tree! As they"
 		)
 
 	def test_variable_is_a_file_object(self):

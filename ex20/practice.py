@@ -21,14 +21,14 @@ def rewind(current_file):
 	XXX FINISH THE FUNCTION HERE
 
 # Okay, now write a function that will allow me to 
-# print a specific line.
+# print just one line.
 
-def print_line(current_file, line_num):
+def print_line(current_file):
 	XXX FINISH THE FUNCTION HERE
 
 
 # These function calls are for testing, don't change these
 print_all(current_file)
 rewind(current_file)
-print_line(current_file, 11)
-print_line(current_file, 12)
+print_line(current_file)
+print_line(current_file)
