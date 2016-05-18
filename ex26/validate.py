@@ -1,20 +1,45 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+print_text = proc.communicate()[0]
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+delim = print_text.split('\n')
+
+class CanCopyAndPaste(unittest.TestCase):
+
+	def test_copied_and_pasted(self):
+		self.assertEqual(
+			delim[0],
+			"Let's practice everything."
+		)
+		self.assertEqual(
+			delim[3],
+			"--------------"
+		)
+		self.assertEqual(
+			delim[4],
+			""
+		)
+		self.assertEqual(
+			delim[7],
+			"cannot discern "
+		)
+		self.assertEqual(
+			delim[9],
+			"nor comprehend passion from intuition"
+		)
+		self.assertEqual(
+			delim[10],
+			"and requires an explanation"
+		)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
