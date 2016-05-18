@@ -32,7 +32,16 @@ class TestBooleanSkills(unittest.TestCase):
 		self.assertEqual(nand_table_row_4, True)
 
 	def test_not_equal_boolean_skills(self):
-		self.assertEqual(not_equal_row_1, True)		
+		self.assertEqual(not_equal_row_1, True)
+		self.assertEqual(not_equal_row_2, False)
+		self.assertEqual(not_equal_row_3, True)
+		self.assertEqual(not_equal_row_4, False)
+
+	def test_equal_boolean_skills(self):
+		self.assertEqual(equal_row_1, False)
+		self.assertEqual(equal_row_2, True)
+		self.assertEqual(equal_row_3, False)
+		self.assertEqual(equal_row_4, True)
 	
 
 
