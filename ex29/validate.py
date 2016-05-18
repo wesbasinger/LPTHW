@@ -1,20 +1,43 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+print_text = proc.communicate()[0]
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+delim = print_text.split('\n')
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+class CanTweakIfStatements(unittest.TestCase):
+	def test_can_make_a_function_with_one_arg(self):
+		self.assertEqual(
+			delim[0],
+			"For"
+		)
+		self.assertEqual(
+			delim[1],
+			"he's"
+		)
+		self.assertEqual(
+			delim[2],
+			"a"
+		)
+		self.assertEqual(
+			delim[3],
+			"jolly"
+		)
+		self.assertEqual(
+			delim[4],
+			"good"
+		)
+		self.assertEqual(
+			delim[5],
+			"fellow"
+		)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
