@@ -1,20 +1,41 @@
 import unittest
+from practice import *
 
-class TestStringMethods(unittest.TestCase):
+class TestBooleanSkills(unittest.TestCase):
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+	def test_not_boolean_skills(self):
+		self.assertEqual(not_table_row_1, False)
+		self.assertEqual(not_table_row_2, True)
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+	def test_or_boolean_skills(self):
+		self.assertEqual(or_table_row_1, True)
+		self.assertEqual(or_table_row_2, True)
+		self.assertEqual(or_table_row_3, True)
+		self.assertEqual(or_table_row_4, False)
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_and_boolean_skills(self):
+		self.assertEqual(and_table_row_1, False)
+		self.assertEqual(and_table_row_2, True)
+		self.assertEqual(and_table_row_3, False)
+		self.assertEqual(and_table_row_4, False)
+
+	def test_nor_boolean_skills(self):
+		self.assertEqual(nor_table_row_1, False)
+		self.assertEqual(nor_table_row_2, False)
+		self.assertEqual(nor_table_row_3, False)
+		self.assertEqual(nor_table_row_4, True)
+
+	def test_nand_boolean_skills(self):
+		self.assertEqual(nand_table_row_1, True)
+		self.assertEqual(nand_table_row_2, False)
+		self.assertEqual(nand_table_row_3, True)
+		self.assertEqual(nand_table_row_4, True)
+
+	def test_not_equal_boolean_skills(self):
+		self.assertEqual(not_equal_row_1, True)		
+	
+
+
 
 if __name__ == '__main__':
     unittest.main()
