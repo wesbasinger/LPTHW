@@ -12,32 +12,16 @@ print_text = proc.communicate()[0]
 
 delim = print_text.split('\n')
 
-class CanCopyAndPaste(unittest.TestCase):
+class CanFixSyntaxErrors(unittest.TestCase):
 
-	def test_copied_and_pasted(self):
+	def test_can_get_to_the_first_line(self):
 		self.assertEqual(
 			delim[0],
 			"Let's practice everything."
 		)
 		self.assertEqual(
-			delim[3],
-			"--------------"
-		)
-		self.assertEqual(
-			delim[4],
-			""
-		)
-		self.assertEqual(
-			delim[7],
-			"cannot discern "
-		)
-		self.assertEqual(
-			delim[9],
-			"nor comprehend passion from intuition"
-		)
-		self.assertEqual(
-			delim[10],
-			"and requires an explanation"
+			delim[20],
+			"all"
 		)
 
 if __name__ == '__main__':
