@@ -1,20 +1,14 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+class CanTweakIfandElifStatements(unittest.TestCase):
+	def test_can_make_a_function_with_one_arg(self):
+		self.assertEqual(
+			result,
+			"Burgers, bacon and mutton"
+		)
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
-
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
-
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
+
