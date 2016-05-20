@@ -1,20 +1,23 @@
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+class CanAccessListElementsByIndex(unittest.TestCase):
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+	def test_can_make_5_element_list_with_apple_in_pos_3(test):
+		self.assertEqual(
+			len(five_elements), 5
+		)
+		self.assertEqual(
+			five_elements[3],
+			"apple"
+		)
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_can_access_by_index(self):
+		self.assertEqual(
+			number_one_hit,
+			"Thriller"
+		)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
