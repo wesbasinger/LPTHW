@@ -19,12 +19,8 @@ class CanCreateWhileLoops(unittest.TestCase):
 		self.assertEqual(delim[3], "4")
 		self.assertEqual(delim[4], "5")
 
-	def test_can_use_while_loop_to_print_items_of_list(self):
-		self.assertEqual(delim[5], "protractor")
-		self.assertEqual(delim[6], "compass")
-		self.assertEqual(delim[7], "calculator")
-		self.assertEqual(delim[8], "slide rule")
-		self.assertEqual(delim[9], "pencil")
+	def test_can_use_while_loop_to_populate_list(self):
+		self.assertEqual(empty, [2, 4, 6, 8, 10])
 
 if __name__ == '__main__':
     unittest.main()   
