@@ -1,6 +1,8 @@
 import unittest
 import subprocess
 
+from practice import *
+
 proc = subprocess.Popen(
         ['python', 'practice.py'],
         stdout=subprocess.PIPE,
