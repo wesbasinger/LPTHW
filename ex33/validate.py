@@ -1,20 +1,30 @@
 import unittest
+import subprocess
 
-class TestStringMethods(unittest.TestCase):
+proc = subprocess.Popen(
+        ['python', 'practice.py'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT)
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+print_text = proc.communicate()[0]
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+delim = print_text.split('\n')
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+class CanCreateWhileLoops(unittest.TestCase):
+
+	def test_can_use_while_loop_to_print_to_5(self):
+		self.assertEqual(delim[0], "1")
+		self.assertEqual(delim[1], "2")
+		self.assertEqual(delim[2], "3")
+		self.assertEqual(delim[3], "4")
+		self.assertEqual(delim[4], "5")
+
+	def test_can_use_while_loop_to_print_items_of_list(self):
+		self.assertEqual(delim[5], "protractor")
+		self.assertEqual(delim[6], "compass")
+		self.assertEqual(delim[7], "calculator")
+		self.assertEqual(delim[8], "slide rule")
+		self.assertEqual(delim[9], "pencil")
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
