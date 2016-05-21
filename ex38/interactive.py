@@ -14,12 +14,12 @@ favorite_player = "My favorite player of all time is Tony Romo."
 print "First, let's look at the split method.  It is usually"
 print "applied to strings."
 
-print "Enter this command: stuff = favorite_player.split()"
+print "Enter this command: stuff = favorite_player.split(' ')"
 
 prompt = raw_input(">>> ")
 
-if prompt == "stuff = favorite_player.split()":
-	stuff = favorite_player.split()
+if prompt == "stuff = favorite_player.split(' ')":
+	stuff = favorite_player.split(' ')
 	print "Good job"
 else:
 	print "Nope. Try again."
