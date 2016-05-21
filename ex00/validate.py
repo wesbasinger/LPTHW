@@ -21,8 +21,7 @@ should_string = '''1.  Get a suitable text editor.
 6.  Learn how to make a directory.
 7.  Learn how to change into a directory.
 8.  Learn how to save files in your text editor.
-9.  Get comfortable with the command line.
-'''
+9.  Get comfortable with the command line.'''
 
 class TestFileAndDirectoryCreation(unittest.TestCase):
 
