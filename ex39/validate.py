@@ -1,20 +1,38 @@
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+class CanUsePopAndJoinMethods(unittest.TestCase):
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+	def test_can_create_a_dictionary(self):
+		self.assertEqual(
+			grass,
+			{
+				"length" : 5,
+				"is_noun" : True,
+				"is_verb" : False,
+				"vowels" : ["a"]
+			}
+		)
+		self.assertEqual(
+			truncate,
+			{
+				"length" : 8,
+				"is_noun" : False,
+				"is_verb": True,
+				"vowels" : ['u', 'a', 'e']
+			}
+		)
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_can_access_dict_elements(self):
+		self.assertEqual(
+			soft,
+			"feathers"
+		)
+		self.assertEqual(
+			fuzzy,
+			"short fur"
+		)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
