@@ -1,20 +1,30 @@
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+class CanUsePopAndJoinMethods(unittest.TestCase):
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+	def test_can_split_a_string_into_a_list_and_pop(self):
+		self.assertEqual(
+			delim,
+			[
+				"I", 
+				"only", 
+				"regret", 
+				"that", 
+				"I", 
+				"have",
+				"but",
+				"one",
+				"life"
+			]
+		)
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_can_use_join(self):
+		self.assertEqual(
+			joined,
+			"I~only~regret~that~I~have~but~one~life"
+		)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
