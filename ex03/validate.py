@@ -22,7 +22,7 @@ class TestCanUseMathOperators(unittest.TestCase):
         self.assertEqual(int(delim[2]), 100)
 
     def test_can_print_boolean_true(self):
-        self.assertEqual(delim[3], "True")
+        self.assertEqual(delim[3].rstrip(), "True")
 
     def test_can_print_4_with_3_operations(self):
         self.assertEqual(int(delim[4]), 4)
@@ -34,7 +34,7 @@ class TestCanUseMathOperators(unittest.TestCase):
         self.assertEqual(float(delim[6]), 1.23)
 
     def test_can_print_boolean_false_with_diff_ops(self):
-        self.assertEqual(delim[7], "False")
+        self.assertEqual(delim[7].rstrip(), "False")
 
 
 if __name__ == '__main__':
