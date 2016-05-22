@@ -6,17 +6,17 @@ print "When you only need to pass a few parameters in."
 def say_hello(name):
 	return "Hello " + name
 
-print "Let's watch this in action.  Let's way I've written"
+print "Let's watch this in action.  I've written"
 print "a program that takes one command line argument, your name."
 
 print "Pretend you are on the command line.  Run this direction."
-print "python say_hello.py 'Bob'"
+print "python say_hello.py Bob"
 prompt = raw_input('$')
 
 delim = prompt.split(' ')
 
-if delim == ['python', 'say_hello.py', "'Bob'"]:
-	print say_hello('Bob')
+if delim == ['python', 'say_hello.py', "Bob"]:
+	print say_hello("Bob")
 	print "Good job!"
 
 print "Now, you pick any name you like to go as the command line"
