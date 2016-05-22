@@ -13,12 +13,12 @@ print "the current directory."
 
 print "Give this command to make a pointer that opens"
 print "the file."
-print "'holy = open(\'holy.txt\')'"
+print "holy = open('holy.txt')"
 prompt = str(raw_input(">>>"))
 
-if prompt == 'holy = open(\'holy.txt\')':
+if prompt == "holy = open('holy.txt')":
 	print "Success"
-	print "Now give the command: 'holy.read()'"
+	print "Now give the command: holy.read()"
 	prompt = str(raw_input('>>>'))
 	if prompt == "holy.read()":
 		print "You've just opened the Holy Hand Grenade of Antioch."
