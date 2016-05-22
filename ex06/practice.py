@@ -2,7 +2,7 @@
 # Honestly, I've never used the varied types of
 # string formatting, although I'm sure they're useful.
 
-# Make the console print the first line of Mary Had a Little Lamb
+# Make the console print the first line of Row, Row, Row Your Boat
 # Do not make any new strings, only use concatenation
 
 first_part = 
