@@ -13,7 +13,7 @@ delim = print_text.split('\n')
 class TestPrintStatements(unittest.TestCase):
 
   def test_maternal_and_paternal_insults(self):
-      self.assertEqual(delim[0], 'Your mother was a hamster and your father smelt of elderberries!')
+      self.assertEqual(delim[0].rstrip(), 'Your mother was a hamster and your father smelt of elderberries!')
 
   def test_what_have_the_Romans_done_for_us(self):
       self.assertEqual(delim[1].rstrip(), 'All right... all right... but apart from better sanitation, the medicine, education, wine, public order, irrigation, roads, a fresh water system, and public health ... what have the Romans ever done for us?')
