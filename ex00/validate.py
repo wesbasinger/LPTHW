@@ -23,5 +23,10 @@ should_string = '''1.  Get a suitable text editor.
 8.  Learn how to save files in your text editor.
 9.  Get comfortable with the command line.'''
 
+class CopiedStringCorrectly(unittest.testcase):
+	
+	def test_strings_match(self):
+		self.assertEqual(f.read(), should_string)
+
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()
