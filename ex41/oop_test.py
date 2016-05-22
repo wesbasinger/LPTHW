@@ -2,6 +2,13 @@ import random
 from urllib import urlopen
 import sys
 
+print "This is the code which Zed puts out for practice."
+print "I modified it a bit, so it keeps score and gives"
+print "feedback.  It's hard at first, but I practiced a"
+print "lot with this to get better at OOP."
+print "DIRECTIONS: Type what you think the phrase is saying"
+print "and then press Enter.  You have to get it exactly right."
+
 WORD_URL = "http://learncodethehardway.org/words.txt"
 WORDS = []
 
