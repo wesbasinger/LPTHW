@@ -1,20 +1,20 @@
 import unittest
 
-class TestStringMethods(unittest.TestCase):
+from practice import *
 
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
+class CanCreateClassesAndMethods(unittest.TestCase):
 
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
+	def test_can_finsh_a_class(self):
+		test_dog = Dog("test_dog")
+		self.assertEqual(test_dog.name, "test_dog")
+		self.assertEqual(test_dog.bark(), "Ruff, ruff!")
+		student = Student("test")
+		self.assertEqual(student.name, "test")
+		self.assertEqual(student.sleep(), "Sleeping...")
 
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
+	def test_can_instantiate_objects(self):
+		self.assertIsInstance(rex, Dog)
+		self.assertIsInstance(mike, Student)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()   
