@@ -20,17 +20,15 @@ print "'HelloHelloHello'"
 print '\n'
 
 print "See what that does?"
-print "Now you give the command to print 'five' 5 times."
+print "Now you give this command: print 'five'*5
 
 prompt = str(raw_input(">>>"))
 
-delim = prompt.split('*')
-
-if delim != ["'five'", "5"]:
-	print "You didn't input the command right."
-	exit(0)
+if prompt == "print 'five'*5":
+	print 'five'*5
 else:
-	print "Success!"
+	print "Not quite."
+	exit(0)
 
 print "Okay, now you try any type of string multiplication you want."
 
