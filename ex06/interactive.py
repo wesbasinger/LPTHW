@@ -38,6 +38,7 @@ print "Now you try..."
 cat = raw_input('>>>')
 
 if ('print' in cat) and ('x' in cat) and ("\' \'" in cat) and ('y' in cat):
+	print "Spam Eggs"
 	print "Success!"
 	exit(0)
 else:
