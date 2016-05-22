@@ -19,4 +19,3 @@ print "He's %s inches tall." % PUT_MY_HEIGHT_VARIABLE_HERE
 print "He's %s pounds heavy." % PUT_MY_WEIGHT_VARIABLE_HERE
 print "He's got %s eyes and %s hair." % (PUT_APPROPRIATE_VARIABLES HERE)
 print "His teeth are usually %s depending on the coffee." % PUT_APPROPRIATE_VARAIBLE HERE
-print "If I add %d, %d, and %d I get %d." % PUT_APPROPRIATE VARIABLES HERE
