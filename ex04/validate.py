@@ -20,7 +20,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			"Austin"
 		)
 		self.assertEqual(
-			str(delim[0]), 
+			str(delim[0].rstrip()), 
 			"The capital city of Texas is Austin."
 		)
 
@@ -30,7 +30,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			4
 		)
 		self.assertEqual(
-			str(delim[1]),
+			str(delim[1].rstrip()),
 			"The number of sides in a square is 4."
 		)
 
@@ -40,7 +40,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			True
 		)
 		self.assertEqual(
-			str(delim[2]),
+			str(delim[2].rstrip()),
 			"Is water a molecule? True"
 		)
 
@@ -50,7 +50,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			3
 		)
 		self.assertEqual(
-			str(delim[3]), 
+			str(delim[3].rstrip()), 
 			"A triangle has 1 less side than a square."
 		)
 
@@ -60,7 +60,7 @@ class TestCanUseMathOperators(unittest.TestCase):
 			"lamb"
 		)
 		self.assertEqual(
-			str(delim[4]), 
+			str(delim[4].rstrip()), 
 			"Mary's pet was a little lamb."
 		)
 
