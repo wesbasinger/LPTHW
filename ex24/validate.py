@@ -25,7 +25,7 @@ class CanCopyAndPaste(unittest.TestCase):
 		)
 		self.assertEqual(
 			delim[7].rstrip(),
-			"cannot discern "
+			"cannot discern"
 		)
 		self.assertEqual(
 			delim[9].rstrip(),
