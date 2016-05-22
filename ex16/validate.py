@@ -38,7 +38,7 @@ class TestCanOpenFiles(unittest.TestCase):
 		)
 	def test_can_write_to_file(self):
 		self.assertEqual(
-			delim[0],
+			delim[0].rstrip(),
 			'Testing, testing, 123'
 		)
 
