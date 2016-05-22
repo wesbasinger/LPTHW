@@ -16,27 +16,27 @@ class CanCopyAndPaste(unittest.TestCase):
 
 	def test_copied_and_pasted(self):
 		self.assertEqual(
-			delim[0],
+			delim[0].rstrip(),
 			"Let's practice everything."
 		)
 		self.assertEqual(
-			delim[3],
+			delim[3].rstrip(),
 			"--------------"
 		)
 		self.assertEqual(
-			delim[4],
+			delim[4].rstrip(),
 			""
 		)
 		self.assertEqual(
-			delim[7],
+			delim[7].rstrip(),
 			"cannot discern "
 		)
 		self.assertEqual(
-			delim[9],
+			delim[9].rstrip(),
 			"nor comprehend passion from intuition"
 		)
 		self.assertEqual(
-			delim[10],
+			delim[10].rstrip(),
 			"and requires an explanation"
 		)
 
