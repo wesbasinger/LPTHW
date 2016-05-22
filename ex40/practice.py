@@ -19,7 +19,7 @@ class Dog(object):
 
 # Now create an instance of the Dog class called rex.
 # name it whatever you like.
-rex =
+rex = 
 
 # Create an instance of the Student class called mike.
 # Name it whatever you'd like.
