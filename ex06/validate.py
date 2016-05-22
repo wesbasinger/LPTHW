@@ -16,7 +16,7 @@ class TestCanUseStringFormatting(unittest.TestCase):
 
     def test_can_cat_row_row_row_your_boat(self):
 		self.assertEqual(
-			str(delim[0]), 
+			str(delim[0].rstrip()), 
 			"Row, row, row your boat Gently down the stream."
 		)
 
@@ -46,7 +46,7 @@ class TestCanUseStringFormatting(unittest.TestCase):
 			"lamb"
 		)
 		self.assertEqual(
-			str(delim[1]),
+			str(delim[1].rstrip()),
 			"Mary had a little lamb"
 		)
 
@@ -60,7 +60,7 @@ class TestCanUseStringFormatting(unittest.TestCase):
 			"1"
 		)
 		self.assertEqual(
-			str(delim[2]),
+			str(delim[2].rstrip()),
 			"Takes 1 to know one."
 		)
 
