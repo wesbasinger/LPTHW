@@ -15,21 +15,21 @@ delim = print_text.split('\n')
 class CanCallSimpleFunctionsWithFileOps(unittest.TestCase):
 	def test_can_make_print_all_function(self):
 		self.assertEqual(
-			delim[0],
+			delim[0].rstrip(),
 			"Leaping from tree to tree! As they"
 		)
 		self.assertEqual(
-			delim[4],
+			delim[4].rstrip(),
 			"The Larch!"
 		)
 		self.assertEqual(
-			delim[12],
+			delim[12].rstrip(),
 			"I sleep all night and I work all day."
 		)
 	
 	def test_can_make_print_line_function(self):
 		self.assertEqual(
-			delim[14],
+			delim[14].rstrip(),
 			"Leaping from tree to tree! As they"
 		)
 

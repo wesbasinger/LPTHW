@@ -85,4 +85,5 @@ else:
 	print "Not quite, try again."
 	exit(0)
 
-print "Okay, I hope you have the general idea of how that works."  print "Head over to practice.py for hands on work."
+print "Okay, I hope you have the general idea of how that works."
+print "Head over to practice.py for hands on work."

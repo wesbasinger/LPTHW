@@ -15,19 +15,19 @@ delim = print_text.split('\n')
 class CanDeclareSimpleFunctions(unittest.TestCase):
 	def test_can_make_a_function_with_one_arg(self):
 		self.assertEqual(
-			delim[0],
+			delim[0].rstrip(),
 			"Monty Python and the Holy Grail"
 		)
 	
 	def test_can_make_a_function_print_second_arg(self):
 		self.assertEqual(
-			delim[1],
+			delim[1].rstrip(),
 			"Python"
 		)
 
 	def test_can_make_function_with_no_args(self):
 		self.assertEqual(
-			delim[2],
+			delim[2].rstrip(),
 			"Depends"
 		)
 

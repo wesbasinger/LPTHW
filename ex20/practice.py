@@ -4,26 +4,26 @@
 
 # First, get a handle to the file by opening it.
 
-current_file = open('lumberjack.txt')
+current_file =
 
 # Okay, now define a function similar to what you saw in
 # exercise, where the whole file is printed.
 
 
 def print_all(current_file):
-	print current_file.read()
+	XXX
 
 
 # Okay, now write a function that will rewind back
 
 def rewind(current_file):
-	current_file.seek(0)	
+	XXX
 
 # Okay, now write a function that will allow me to 
 # print just one line.
 
 def print_line(current_file):
-	print current_file.readline()
+	XXX
 
 # These function calls are for testing, don't change these
 print_all(current_file)

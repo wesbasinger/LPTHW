@@ -20,7 +20,7 @@ print "'HelloHelloHello'"
 print '\n'
 
 print "See what that does?"
-print "Now you give this command: print 'five'*5
+print "Now you give this command: print 'five'*5"
 
 prompt = str(raw_input(">>>"))
 
