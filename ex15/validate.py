@@ -25,7 +25,7 @@ class TestCanOpenFiles(unittest.TestCase):
 		)
 	def test_can_print_file_to_screen(self):
 		self.assertEqual(
-			str(delim[41]),
+			str(delim[41]).rstrip(),
 			"P2: Cuz they're made of... wood?"
 		)
 
