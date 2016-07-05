@@ -53,19 +53,19 @@ class CanCreateListsAndRunForLoops(unittest.TestCase):
 			3
 		)
 	def test_can_do_a_basic_loop(self):
-		self.assertEqual(delim[0],"1")
-		self.assertEqual(delim[1],"3")
-		self.assertEqual(delim[2],"5")
-		self.assertEqual(delim[3],"7")
-		self.assertEqual(delim[4],"9")
-		self.assertEqual(delim[5],"11")
-		self.assertEqual(delim[6],"13")
-		self.assertEqual(delim[7],"15")
+		self.assertEqual(delim[0].rstrip(),"1")
+		self.assertEqual(delim[1].rstrip(),"3")
+		self.assertEqual(delim[2].rstrip(),"5")
+		self.assertEqual(delim[3].rstrip(),"7")
+		self.assertEqual(delim[4].rstrip(),"9")
+		self.assertEqual(delim[5].rstrip(),"11")
+		self.assertEqual(delim[6].rstrip(),"13")
+		self.assertEqual(delim[7].rstrip(),"15")
 
 	def test_can_do_a_simple_loop(self):
-		self.assertEqual(delim[8][-1], ".")
-		self.assertEqual(delim[9][-1], ".")
-		self.assertEqual(delim[10][-1], ".")
+		self.assertEqual(delim[8][-1].rstrip(), ".")
+		self.assertEqual(delim[9][-1].rstrip(), ".")
+		self.assertEqual(delim[10][-1].rstrip(), ".")
 
 	def test_can_fill_a_list_with_for_loop(self):
 		self.assertEqual(
